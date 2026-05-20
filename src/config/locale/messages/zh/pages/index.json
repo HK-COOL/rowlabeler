@@ -1,0 +1,289 @@
+{
+  "page": {
+    "show_sections": [
+      "hero",
+      "generator",
+      "use-cases",
+      "workflow",
+      "features",
+      "stats",
+      "faq",
+      "cta"
+    ],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "不用拖拽 40 万行，生成 Excel 批量序列",
+        "highlight_text": "不用拖拽",
+        "description": "一键规划 Account1、Account2、行号、补零编号、Excel 公式和 CSV 预览，专门解决批量编号这类看似小但很耗时的表格问题。",
+        "announcement": {
+          "badge": "免费",
+          "title": "为表格清洗、运营名单、批量编号而建",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "打开生成器",
+            "icon": "ListOrdered",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "查看场景",
+            "icon": "TableProperties",
+            "url": "/#use-cases",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel 批量序列生成器预览",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "表格工作区背景"
+        }
+      },
+      "generator": {
+        "block": "excel-sequence-generator",
+        "id": "generator",
+        "title": "一次生成标签、公式和 CSV 预览",
+        "label": "生成器",
+        "description": "只需要输入一次序列规则，就能复制 Excel 365 公式、旧版 ROW 公式、纯文本预览或 CSV 预览，不再拖拽填充柄。",
+        "labels": {
+          "prefix": "前缀",
+          "start": "起始数字",
+          "count": "生成行数",
+          "step": "步长",
+          "separator": "分隔符",
+          "padding": "补零位数",
+          "outputColumns": "CSV 列数",
+          "examples": "快速示例",
+          "reset": "重置",
+          "result": "生成结果",
+          "formula365": "Excel 365 公式",
+          "legacyFormula": "旧版 Excel 公式",
+          "plainText": "纯文本预览",
+          "csvPreview": "CSV 预览",
+          "copy": "复制",
+          "copied": "已复制",
+          "previewNote": "为了保持浏览器流畅，这里只预览前 {limit} 行。",
+          "emptyState": "修正输入后即可生成公式和预览。",
+          "totalRows": "共 {count} 行",
+          "previewRows": "预览 {count} 行",
+          "totalRowsLabel": "总行数",
+          "previewRowsLabel": "预览行数",
+          "setupTitle": "序列设置",
+          "localNote": "不上传文件",
+          "guideCta": "需要 40 万行 Account 教程？",
+          "guideUrl": "/zh/blog/generate-400000-account-labels-without-dragging",
+          "guideLink": "阅读教程",
+          "outputReady": "可以复制",
+          "outputBlocked": "等待有效输入",
+          "downloadCsv": "下载 CSV",
+          "downloadedCsv": "已下载"
+        },
+        "errorMessages": {
+          "prefix-required": "请输入前缀，例如 Account、Item、SKU 或 Row。",
+          "start-invalid": "起始数字必须是整数。",
+          "count-invalid": "生成行数必须在 1 到 1,000,000 之间。",
+          "step-invalid": "步长必须是非零整数。",
+          "separator-invalid": "分隔符最多 10 个字符，且不能包含换行。",
+          "padding-invalid": "补零位数必须在 0 到 12 之间。",
+          "output-columns-invalid": "CSV 列数必须在 1 到 26 之间。"
+        },
+        "examples": [
+          {
+            "title": "Account1...",
+            "prefix": "Account",
+            "start": 1,
+            "count": 400000,
+            "step": 1,
+            "separator": "",
+            "padding": 0
+          },
+          {
+            "title": "SKU-0001...",
+            "prefix": "SKU",
+            "start": 1,
+            "count": 250,
+            "step": 1,
+            "separator": "-",
+            "padding": 4
+          },
+          {
+            "title": "Batch 100...",
+            "prefix": "Batch",
+            "start": 100,
+            "count": 20,
+            "step": 5,
+            "separator": " ",
+            "padding": 0
+          },
+          {
+            "title": "3 列 CSV",
+            "prefix": "Account",
+            "start": 1,
+            "count": 12,
+            "step": 1,
+            "separator": "",
+            "padding": 0,
+            "outputColumns": 3
+          }
+        ]
+      },
+      "use-cases": {
+        "block": "features-list",
+        "id": "use-cases",
+        "title": "围绕真正浪费时间的 Excel 小任务设计",
+        "label": "使用场景",
+        "description": "很多用户不需要再学一整套 Excel 课程，只需要一个正确公式、一个安全预览，以及能马上复制回表格里的结果。",
+        "image": {
+          "src": "/imgs/features/admin.png",
+          "alt": "表格示例"
+        },
+        "items": [
+          {
+            "title": "Account1 到 Account400000",
+            "description": "生成账号、工单、发票、批次、SKU 等长序列标签，不再靠填充柄一路拖到底。",
+            "icon": "Hash"
+          },
+          {
+            "title": "Excel 公式生成",
+            "description": "同时给出现代 Excel 365 和旧版 Excel 的公式思路，降低用户查公式和试错成本。",
+            "icon": "Sigma"
+          },
+          {
+            "title": "CSV 与纯文本预览",
+            "description": "复制公式前先看一小段输出，也可以把固定值导入其他运营或数据处理流程。",
+            "icon": "ClipboardCheck"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "从编号想法到可粘贴结果",
+        "description": "给那些只是因为工作需要才打开 Excel 的用户，一个三步走的直接路径。",
+        "image": {
+          "src": "/imgs/features/5.png",
+          "alt": "工作流"
+        },
+        "image_position": "left",
+        "text_align": "center",
+        "items": [
+          {
+            "title": "描述序列",
+            "description": "选择标签前缀、起始数字、生成行数、递增步长、分隔符和补零位数。"
+          },
+          {
+            "title": "检查公式与预览",
+            "description": "对比 Excel 365 公式、旧版公式和一小段生成结果，确认再复制。"
+          },
+          {
+            "title": "粘贴回 Excel",
+            "description": "需要动态更新就用公式，需要固定标签就复制值，适配导入导出场景。"
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "features": {
+        "id": "features",
+        "title": "专注把批量编号做顺手",
+        "description": "打开页面就能生成公式、预览结果、复制回 Excel，不需要绕到账号、上传或复杂设置里。",
+        "items": [
+          {
+            "title": "确定性输出",
+            "description": "没有 AI 猜测。同样输入每次得到同样公式和预览。",
+            "icon": "Calculator"
+          },
+          {
+            "title": "理解 Excel 版本差异",
+            "description": "支持 SEQUENCE 公式，也提供旧版 Excel 可用的 ROW 替代方案。",
+            "icon": "Braces"
+          },
+          {
+            "title": "复制优先界面",
+            "description": "复制按钮、预览限制和错误提示都围绕实际表格操作设计。",
+            "icon": "Copy"
+          },
+          {
+            "title": "适合常见编号任务",
+            "description": "适用于账号、工单、SKU、批次号、行标签等重复但容易出错的序列。",
+            "icon": "Search"
+          }
+        ]
+      },
+      "stats": {
+        "id": "stats",
+        "title": "少一点拖拽，多一点确定",
+        "description": "把批量编号规则写清楚，让 Excel 公式和预览结果替你完成重复工作。",
+        "items": [
+          {
+            "title": "40万",
+            "description": "可用于几十万行级别的序列公式"
+          },
+          {
+            "title": "3种",
+            "description": "公式、纯文本预览、CSV 预览"
+          },
+          {
+            "title": "0步",
+            "description": "无需登录即可开始生成"
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Excel 批量序列生成器常见问题",
+        "description": "给从 Excel 论坛、Reddit、搜索引擎来的用户一个直接答案。",
+        "items": [
+          {
+            "question": "能生成 Account1、Account2、Account3 这种标签吗？",
+            "answer": "可以。输入前缀、起始数字、数量、步长、分隔符和补零位数后，就能复制公式、预览值或 CSV。"
+          },
+          {
+            "question": "没有 Excel 365 也能用吗？",
+            "answer": "可以。页面会同时给出现代 SEQUENCE 公式和旧版 ROW 公式，你可以按自己的 Excel 版本选择。"
+          },
+          {
+            "question": "可以生成几十万行吗？",
+            "answer": "工具会为大行数生成公式，同时限制浏览器预览数量，避免页面卡死。"
+          },
+          {
+            "question": "网站会上传或修改我的 Excel 文件吗？",
+            "answer": "不会。它只在浏览器里生成文本和公式，不需要上传表格、不需要账号、不需要付费，也不会直接编辑你的工作簿。"
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "现在就生成你的 Excel 序列",
+        "description": "输入前缀和行数，复制适合你 Excel 版本的公式，或者下载 CSV 结果继续处理。",
+        "buttons": [
+          {
+            "title": "回到生成器",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "ListOrdered"
+          },
+          {
+            "title": "查看场景",
+            "url": "/#use-cases",
+            "target": "_self",
+            "variant": "outline",
+            "icon": "TableProperties"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "title": "Excel 批量行标签生成器 - 标签、ID 与 CSV 预览",
+    "description": "为 Excel、CSV 导出、运营名单、ID、工单、批次和报表生成批量行标签，支持公式和预览。"
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Excel 批量行标签生成器",
+        "highlight_text": "行标签",
+        "description": "为行、批次、导出、工单、SKU、账号和报表生成标签，不用手写，也不用拖拽。",
+        "announcement": {
+          "badge": "标签",
+          "title": "适合运营名单、导入、报表和 CSV 准备",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "生成行标签",
+            "icon": "Rows3",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "查看自动填充页",
+            "icon": "MousePointer2",
+            "url": "/excel-autofill-without-dragging",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "批量行标签生成器预览",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "表格背景"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "一个生成器覆盖多种标签模式",
+        "description": "批量标签本质上都是同一种结构：前缀、数字、步长、分隔符和可选补零。",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "批量行标签示例"
+        },
+        "items": [
+          {
+            "title": "运营标签",
+            "description": "Batch1、Batch2、Ticket100、Ticket101，或者任意内部列表标签。",
+            "icon": "ClipboardList"
+          },
+          {
+            "title": "CSV 预览",
+            "description": "其他应用需要固定值时，可以复制一小段 CSV 风格预览。",
+            "icon": "FileSpreadsheet"
+          },
+          {
+            "title": "公式优先",
+            "description": "面对大范围 Excel 行数时，优先复制公式，而不是生成超大浏览器输出。",
+            "icon": "Sigma"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "构建行标签序列",
+        "description": "先确定标签模式，再选择公式或固定值预览。",
+        "items": [
+          {
+            "title": "选择标签前缀",
+            "description": "可使用 Row、Batch、Ticket、SKU、Account 或 Client 等名称。"
+          },
+          {
+            "title": "设置编号规则",
+            "description": "选择起始数字、数量、步长、分隔符和补零位数。"
+          },
+          {
+            "title": "复制合适输出",
+            "description": "大范围 Excel 用公式，小范围导入或示例用预览值。"
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "id": "related",
+        "title": "相关标签和公式页面",
+        "description": "每个页面覆盖一个独立表格搜索意图。",
+        "items": [
+          {
+            "title": "账号标签生成器",
+            "description": "用于 Account1 和账号 ID 序列。",
+            "icon": "Tags"
+          },
+          {
+            "title": "序列公式生成器",
+            "description": "用于 SEQUENCE、ROW 和 TEXT 公式。",
+            "icon": "Sigma"
+          },
+          {
+            "title": "不拖拽自动填充",
+            "description": "适合想更快填充长序列的用户。",
+            "icon": "MousePointer2"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "批量行标签常见问题",
+        "items": [
+          {
+            "question": "可以生成哪些标签？",
+            "answer": "任何前缀加数字的模式，例如 Row1、Batch-0100、Ticket500 或 SKU-0001。"
+          },
+          {
+            "question": "可以生成 CSV 输出吗？",
+            "answer": "可以。生成器包含可复制的 CSV 预览。"
+          },
+          {
+            "question": "应该复制值还是公式？",
+            "answer": "大范围 Excel 用公式，小范围固定预览或导入用值。"
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "现在创建批量行标签",
+        "description": "打开生成器，复制适合当前表格任务的输出。",
+        "buttons": [
+          {
+            "title": "打开生成器",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "Rows3"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

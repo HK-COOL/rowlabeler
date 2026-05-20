@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "title": "Bulk Row Label Generator for Excel - Labels, IDs, CSV Preview",
+    "description": "Generate bulk row labels for Excel, CSV exports, operations lists, IDs, tickets, batches, and reports with formulas and previews."
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Bulk row label generator for Excel",
+        "highlight_text": "row label",
+        "description": "Create labels for rows, batches, exports, tickets, SKUs, accounts, and reports without manually writing or dragging them.",
+        "announcement": {
+          "badge": "Labels",
+          "title": "For operations lists, imports, reports, and CSV prep",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "Generate Row Labels",
+            "icon": "Rows3",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "Autofill Page",
+            "icon": "MousePointer2",
+            "url": "/excel-autofill-without-dragging",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Bulk row label generator preview",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "spreadsheet background"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "One generator for many label patterns",
+        "description": "Bulk labels are the same pattern with different words: prefix, number, step, separator, and optional padding.",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Bulk row label examples"
+        },
+        "items": [
+          {
+            "title": "Operations labels",
+            "description": "Batch1, Batch2, Ticket100, Ticket101, or any internal list label.",
+            "icon": "ClipboardList"
+          },
+          {
+            "title": "CSV-ready previews",
+            "description": "Preview and copy a small fixed-value sample when another app needs CSV-like input.",
+            "icon": "FileSpreadsheet"
+          },
+          {
+            "title": "Formula-first workflow",
+            "description": "Use formulas for long Excel ranges instead of generating huge browser output.",
+            "icon": "Sigma"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "Build a row label sequence",
+        "description": "Start with a label pattern, then choose whether formula or preview values fit the job.",
+        "items": [
+          {
+            "title": "Pick the label prefix",
+            "description": "Use names like Row, Batch, Ticket, SKU, Account, or Client."
+          },
+          {
+            "title": "Set the numbering rule",
+            "description": "Choose start number, count, step, separator, and padding."
+          },
+          {
+            "title": "Copy the best output",
+            "description": "Use formula output for Excel ranges or preview output for fixed sample values."
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "id": "related",
+        "title": "Related label and formula pages",
+        "description": "Each page targets a distinct spreadsheet search intent.",
+        "items": [
+          {
+            "title": "Account label generator",
+            "description": "For Account1 and account ID sequences.",
+            "icon": "Tags"
+          },
+          {
+            "title": "Sequence formula generator",
+            "description": "For SEQUENCE, ROW, and TEXT formula patterns.",
+            "icon": "Sigma"
+          },
+          {
+            "title": "Autofill without dragging",
+            "description": "For users trying to fill long series faster.",
+            "icon": "MousePointer2"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Bulk row label FAQ",
+        "items": [
+          {
+            "question": "What labels can I generate?",
+            "answer": "Any prefix plus number pattern, such as Row1, Batch-0100, Ticket500, or SKU-0001."
+          },
+          {
+            "question": "Can this make CSV output?",
+            "answer": "Yes. The generator includes a CSV preview for copy-ready fixed values."
+          },
+          {
+            "question": "Should I copy values or formulas?",
+            "answer": "Use formulas for large Excel ranges and values for small fixed previews or imports."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Create bulk row labels now",
+        "description": "Open the generator and copy the output that fits your spreadsheet task.",
+        "buttons": [
+          {
+            "title": "Open Generator",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "Rows3"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

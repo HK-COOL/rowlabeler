@@ -1,0 +1,289 @@
+{
+  "page": {
+    "show_sections": [
+      "hero",
+      "generator",
+      "use-cases",
+      "workflow",
+      "features",
+      "stats",
+      "faq",
+      "cta"
+    ],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Generate Excel sequences without dragging 400,000 rows",
+        "highlight_text": "without dragging",
+        "description": "Create bulk labels like Account1, Account2, row numbers, zero-padded IDs, Excel formulas, and CSV previews from one focused generator.",
+        "announcement": {
+          "badge": "Free",
+          "title": "Built for spreadsheet cleanup, ops lists, and bulk numbering",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "Open Generator",
+            "icon": "ListOrdered",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "See Use Cases",
+            "icon": "TableProperties",
+            "url": "/#use-cases",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel sequence generator preview",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "spreadsheet workspace background"
+        }
+      },
+      "generator": {
+        "block": "excel-sequence-generator",
+        "id": "generator",
+        "title": "Generate labels, formulas, and CSV previews in one place",
+        "label": "Generator",
+        "description": "Enter the sequence pattern once. Copy an Excel 365 formula, a legacy ROW formula, a plain-text preview, or a CSV preview without dragging the fill handle.",
+        "labels": {
+          "prefix": "Prefix",
+          "start": "Start",
+          "count": "Rows",
+          "step": "Step",
+          "separator": "Separator",
+          "padding": "Zero padding",
+          "outputColumns": "CSV columns",
+          "examples": "Quick examples",
+          "reset": "Reset",
+          "result": "Generated output",
+          "formula365": "Excel 365 formula",
+          "legacyFormula": "Legacy Excel formula",
+          "plainText": "Plain text preview",
+          "csvPreview": "CSV preview",
+          "copy": "Copy",
+          "copied": "Copied",
+          "previewNote": "Showing the first {limit} rows only to keep the browser fast.",
+          "emptyState": "Fix the inputs to generate formulas and previews.",
+          "totalRows": "{count} total rows",
+          "previewRows": "{count} preview rows",
+          "totalRowsLabel": "Total rows",
+          "previewRowsLabel": "Preview rows",
+          "setupTitle": "Pattern setup",
+          "localNote": "No file upload",
+          "guideCta": "Need the 400k Account walkthrough?",
+          "guideUrl": "/blog/generate-400000-account-labels-without-dragging",
+          "guideLink": "Read the guide",
+          "outputReady": "Ready to copy",
+          "outputBlocked": "Waiting for valid inputs",
+          "downloadCsv": "Download CSV",
+          "downloadedCsv": "Downloaded"
+        },
+        "errorMessages": {
+          "prefix-required": "Enter a prefix such as Account, Item, SKU, or Row.",
+          "start-invalid": "Start number must be an integer.",
+          "count-invalid": "Row count must be between 1 and 1,000,000.",
+          "step-invalid": "Step must be a non-zero integer.",
+          "separator-invalid": "Separator must be 10 characters or fewer and cannot contain line breaks.",
+          "padding-invalid": "Padding must be between 0 and 12.",
+          "output-columns-invalid": "CSV columns must be between 1 and 26."
+        },
+        "examples": [
+          {
+            "title": "Account1...",
+            "prefix": "Account",
+            "start": 1,
+            "count": 400000,
+            "step": 1,
+            "separator": "",
+            "padding": 0
+          },
+          {
+            "title": "SKU-0001...",
+            "prefix": "SKU",
+            "start": 1,
+            "count": 250,
+            "step": 1,
+            "separator": "-",
+            "padding": 4
+          },
+          {
+            "title": "Batch 100...",
+            "prefix": "Batch",
+            "start": 100,
+            "count": 20,
+            "step": 5,
+            "separator": " ",
+            "padding": 0
+          },
+          {
+            "title": "3-col CSV",
+            "prefix": "Account",
+            "start": 1,
+            "count": 12,
+            "step": 1,
+            "separator": "",
+            "padding": 0,
+            "outputColumns": 3
+          }
+        ]
+      },
+      "use-cases": {
+        "block": "features-list",
+        "id": "use-cases",
+        "title": "Built around the boring Excel jobs that waste real time",
+        "label": "Use Cases",
+        "description": "Most users do not need another spreadsheet course. They need the right formula, a safe preview, and something they can paste back into Excel.",
+        "image": {
+          "src": "/imgs/features/admin.png",
+          "alt": "spreadsheet examples"
+        },
+        "items": [
+          {
+            "title": "Account1 to Account400000",
+            "description": "Generate long account, ticket, invoice, batch, or SKU labels without dragging the fill handle down the sheet.",
+            "icon": "Hash"
+          },
+          {
+            "title": "Excel formula generator",
+            "description": "Get formula patterns for modern Excel 365 and older Excel versions where SEQUENCE is unavailable.",
+            "icon": "Sigma"
+          },
+          {
+            "title": "CSV and plain-text preview",
+            "description": "Preview a limited slice of the output before copying formulas or exporting values into another workflow.",
+            "icon": "ClipboardCheck"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "From numbering idea to paste-ready output",
+        "description": "A simple three-step path for people who only opened Excel because something had to be numbered.",
+        "image": {
+          "src": "/imgs/features/5.png",
+          "alt": "workflow"
+        },
+        "image_position": "left",
+        "text_align": "center",
+        "items": [
+          {
+            "title": "Describe the sequence",
+            "description": "Choose the label prefix, starting number, row count, increment, separator, and padding."
+          },
+          {
+            "title": "Review formulas and preview",
+            "description": "Compare the Excel 365 formula, legacy formula, and a short generated preview before copying."
+          },
+          {
+            "title": "Paste into Excel",
+            "description": "Use the formula for dynamic sheets or copy values when you need fixed labels for import/export."
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "features": {
+        "id": "features",
+        "title": "Focused on bulk numbering",
+        "description": "Open the page, generate formulas, preview the output, and paste the result back into Excel without accounts, uploads, or extra setup.",
+        "items": [
+          {
+            "title": "Deterministic output",
+            "description": "No AI guessing. The same inputs produce the same formulas and previews every time.",
+            "icon": "Calculator"
+          },
+          {
+            "title": "Excel-aware formulas",
+            "description": "Support for SEQUENCE formulas and legacy ROW-based alternatives.",
+            "icon": "Braces"
+          },
+          {
+            "title": "Copy-first UI",
+            "description": "Copy buttons, preview limits, and error messages are built around real spreadsheet work.",
+            "icon": "Copy"
+          },
+          {
+            "title": "Fits common label jobs",
+            "description": "Use it for accounts, tickets, SKUs, batches, row labels, and other repetitive sequences.",
+            "icon": "Search"
+          }
+        ]
+      },
+      "stats": {
+        "id": "stats",
+        "title": "Less dragging, more certainty",
+        "description": "Describe the numbering rule once, then let Excel formulas and previews handle the repetitive work.",
+        "items": [
+          {
+            "title": "400k",
+            "description": "Formula-ready for very large row counts"
+          },
+          {
+            "title": "3",
+            "description": "Formula, text preview, and CSV preview"
+          },
+          {
+            "title": "0",
+            "description": "Login steps before you can start"
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Excel sequence generator FAQ",
+        "description": "Short answers for users searching from Excel forums, Reddit, and search engines.",
+        "items": [
+          {
+            "question": "Can this generate Account1, Account2, Account3 style labels?",
+            "answer": "Yes. Enter a prefix, start number, count, step, separator, and padding, then copy the formula, preview values, or CSV output."
+          },
+          {
+            "question": "Will it work without Excel 365?",
+            "answer": "Yes. The page gives you both a modern SEQUENCE formula and a legacy ROW-based formula, so you can choose the pattern that fits your Excel version."
+          },
+          {
+            "question": "Can I generate hundreds of thousands of rows?",
+            "answer": "The tool will generate formulas for large row counts while keeping browser previews limited, so the page stays fast and usable."
+          },
+          {
+            "question": "Does the site upload or edit my spreadsheet file?",
+            "answer": "No. It generates text and formulas in the browser. It does not require spreadsheet uploads, accounts, payments, or direct workbook editing."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Generate your Excel sequence now",
+        "description": "Enter a prefix and row count, copy the formula that fits your Excel version, or download CSV output for the next step.",
+        "buttons": [
+          {
+            "title": "Go to Generator",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "ListOrdered"
+          },
+          {
+            "title": "Review Use Cases",
+            "url": "/#use-cases",
+            "target": "_self",
+            "variant": "outline",
+            "icon": "TableProperties"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

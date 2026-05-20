@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "title": "Excel Sequence Formula Generator - SEQUENCE and ROW Formulas",
+    "description": "Generate Excel sequence formulas for labels, row numbers, IDs, and CSV previews. Includes Excel 365 SEQUENCE and legacy ROW formulas."
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Excel sequence formula generator",
+        "highlight_text": "sequence formula",
+        "description": "Build copy-ready SEQUENCE and ROW formulas for Excel labels, IDs, row numbers, and repeated spreadsheet tasks.",
+        "announcement": {
+          "badge": "Formula",
+          "title": "Modern Excel 365 and older Excel patterns in one place",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "Generate Formula",
+            "icon": "Sigma",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "Account Label Page",
+            "icon": "Tags",
+            "url": "/excel-account-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel sequence formula preview",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "spreadsheet background"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "Choose the formula pattern that matches your Excel version",
+        "description": "Excel 365 users can use SEQUENCE. Older workbooks often need a ROW-based formula. The generator gives both so you can copy the safer fit.",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel formula outputs"
+        },
+        "items": [
+          {
+            "title": "SEQUENCE formula",
+            "description": "Use dynamic arrays for modern Excel where a single formula can spill into many rows.",
+            "icon": "Sparkles"
+          },
+          {
+            "title": "ROW formula",
+            "description": "Use a classic formula pattern when dynamic arrays are not available.",
+            "icon": "Braces"
+          },
+          {
+            "title": "TEXT padding",
+            "description": "Add zero padding automatically when values need Account0001 style formatting.",
+            "icon": "TextCursorInput"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "How the formula is built",
+        "description": "The inputs map directly to Excel formula parts.",
+        "items": [
+          {
+            "title": "Prefix and separator",
+            "description": "These become the text before each generated number."
+          },
+          {
+            "title": "Start, rows, and step",
+            "description": "These control the numeric sequence in SEQUENCE or ROW."
+          },
+          {
+            "title": "Padding",
+            "description": "When padding is enabled, the formula wraps the number in TEXT."
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "id": "related",
+        "title": "Related formula use cases",
+        "description": "Use the same generator for several common spreadsheet jobs.",
+        "items": [
+          {
+            "title": "Account labels",
+            "description": "Generate Account1, Account2, and account import IDs.",
+            "icon": "Tags"
+          },
+          {
+            "title": "Autofill without dragging",
+            "description": "Avoid dragging the fill handle through thousands of rows.",
+            "icon": "MousePointer2"
+          },
+          {
+            "title": "Bulk row labels",
+            "description": "Create row labels for operations, exports, and reports.",
+            "icon": "Rows3"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Excel sequence formula FAQ",
+        "items": [
+          {
+            "question": "What if my Excel does not support SEQUENCE?",
+            "answer": "Use the legacy ROW formula from the generator instead."
+          },
+          {
+            "question": "Can the formula include text before the number?",
+            "answer": "Yes. The prefix and separator are included before the generated number."
+          },
+          {
+            "question": "Can I copy fixed values instead of a formula?",
+            "answer": "Yes. Use the plain-text or CSV preview for a fixed-value sample."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Build your Excel sequence formula",
+        "description": "Use the generator to create both modern and legacy formula options.",
+        "buttons": [
+          {
+            "title": "Open Generator",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "Sigma"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

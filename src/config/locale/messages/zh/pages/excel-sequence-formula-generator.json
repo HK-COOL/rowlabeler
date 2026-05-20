@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "title": "Excel 序列公式生成器 - SEQUENCE 与 ROW 公式",
+    "description": "为 Excel 标签、行号、ID 和 CSV 预览生成序列公式，包含 Excel 365 SEQUENCE 和旧版 ROW 公式。"
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Excel 序列公式生成器",
+        "highlight_text": "序列公式",
+        "description": "为 Excel 标签、ID、行号和重复表格任务生成可复制的 SEQUENCE 与 ROW 公式。",
+        "announcement": {
+          "badge": "公式",
+          "title": "同时覆盖现代 Excel 365 和旧版 Excel",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "生成公式",
+            "icon": "Sigma",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "查看账号标签页",
+            "icon": "Tags",
+            "url": "/excel-account-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel 序列公式预览",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "表格背景"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "按你的 Excel 版本选择公式",
+        "description": "Excel 365 可以用 SEQUENCE，旧版工作簿通常需要 ROW 公式。生成器同时给出两种方案，方便直接复制。",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel 公式输出"
+        },
+        "items": [
+          {
+            "title": "SEQUENCE 公式",
+            "description": "适合支持动态数组的现代 Excel，一个公式即可溢出生成多行。",
+            "icon": "Sparkles"
+          },
+          {
+            "title": "ROW 公式",
+            "description": "适合没有动态数组能力的旧版 Excel。",
+            "icon": "Braces"
+          },
+          {
+            "title": "TEXT 补零",
+            "description": "需要 Account0001 这类格式时，自动把数字包进 TEXT。 ",
+            "icon": "TextCursorInput"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "公式是如何生成的",
+        "description": "输入项会直接映射到 Excel 公式结构里。",
+        "items": [
+          {
+            "title": "前缀与分隔符",
+            "description": "它们会成为每个数字前面的文本。"
+          },
+          {
+            "title": "起始、行数与步长",
+            "description": "它们控制 SEQUENCE 或 ROW 里的数字序列。"
+          },
+          {
+            "title": "补零位数",
+            "description": "启用补零后，公式会用 TEXT 包裹数字。"
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "id": "related",
+        "title": "相关公式场景",
+        "description": "同一个生成器可以覆盖多个常见表格任务。",
+        "items": [
+          {
+            "title": "账号标签",
+            "description": "生成 Account1、Account2 和导入用账号 ID。",
+            "icon": "Tags"
+          },
+          {
+            "title": "不用拖拽自动填充",
+            "description": "避免拖拽填充柄穿过几千行。",
+            "icon": "MousePointer2"
+          },
+          {
+            "title": "批量行标签",
+            "description": "为运营、导出和报表创建行标签。",
+            "icon": "Rows3"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Excel 序列公式常见问题",
+        "items": [
+          {
+            "question": "我的 Excel 不支持 SEQUENCE 怎么办？",
+            "answer": "使用生成器里的旧版 ROW 公式即可。"
+          },
+          {
+            "question": "公式可以在数字前加文字吗？",
+            "answer": "可以。前缀和分隔符会自动放在生成数字前面。"
+          },
+          {
+            "question": "可以复制固定值而不是公式吗？",
+            "answer": "可以。使用纯文本预览或 CSV 预览即可。"
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "生成你的 Excel 序列公式",
+        "description": "用生成器同时得到现代公式和旧版公式。",
+        "buttons": [
+          {
+            "title": "打开生成器",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "Sigma"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

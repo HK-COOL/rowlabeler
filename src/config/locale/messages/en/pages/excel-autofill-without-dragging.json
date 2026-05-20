@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "title": "Excel Autofill Without Dragging - Fill Long Series Fast",
+    "description": "Avoid dragging Excel's fill handle through thousands of rows. Generate sequence formulas and labels for fast autofill workflows."
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Excel autofill without dragging",
+        "highlight_text": "without dragging",
+        "description": "When a sheet has thousands of rows, dragging the fill handle is fragile. Generate the formula once and paste it where it belongs.",
+        "announcement": {
+          "badge": "Workflow",
+          "title": "A faster path for long fill series and repeated labels",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "Skip the Dragging",
+            "icon": "MousePointer2",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "Bulk Row Labels",
+            "icon": "Rows3",
+            "url": "/bulk-row-label-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel autofill without dragging preview",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "spreadsheet background"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "Use formulas instead of dragging the fill handle",
+        "description": "For long series, formulas are easier to review, easier to repeat, and less likely to stop at the wrong row.",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Autofill formula preview"
+        },
+        "items": [
+          {
+            "title": "No long scroll",
+            "description": "Avoid dragging through large sheets just to create numbered labels.",
+            "icon": "MousePointer2"
+          },
+          {
+            "title": "Repeatable pattern",
+            "description": "Save the prefix, count, step, and padding pattern for future worksheets.",
+            "icon": "Repeat"
+          },
+          {
+            "title": "Preview before paste",
+            "description": "Check the first generated rows before using the formula in Excel.",
+            "icon": "ClipboardCheck"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "A safer autofill workflow",
+        "description": "Generate the sequence pattern, inspect it, and paste it into Excel.",
+        "items": [
+          {
+            "title": "Define the series",
+            "description": "Set start number, row count, step, prefix, and formatting."
+          },
+          {
+            "title": "Copy the formula",
+            "description": "Use Excel 365 SEQUENCE or a legacy ROW formula."
+          },
+          {
+            "title": "Fill from one cell",
+            "description": "Paste into the first target cell and let Excel generate the series."
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "id": "related",
+        "title": "Related long-series tasks",
+        "description": "These pages cover nearby spreadsheet intents.",
+        "items": [
+          {
+            "title": "Excel sequence formulas",
+            "description": "For users searching the exact formula pattern.",
+            "icon": "Sigma"
+          },
+          {
+            "title": "Account1 Account2 labels",
+            "description": "For account and ID naming patterns.",
+            "icon": "Tags"
+          },
+          {
+            "title": "Bulk row labels",
+            "description": "For export, reporting, and operations labels.",
+            "icon": "Rows3"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Autofill without dragging FAQ",
+        "items": [
+          {
+            "question": "Why not just drag the fill handle?",
+            "answer": "Dragging works for small sheets, but it is slow and error-prone for very long ranges."
+          },
+          {
+            "question": "Does this replace Excel autofill?",
+            "answer": "It gives you a formula-based shortcut for the same kind of numbered output."
+          },
+          {
+            "question": "Can I still use the generated values outside Excel?",
+            "answer": "Yes. Copy the plain-text or CSV preview when another tool needs sample fixed values."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Generate a fill-series formula",
+        "description": "Skip manual dragging and create the Excel sequence from inputs.",
+        "buttons": [
+          {
+            "title": "Open Generator",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "MousePointer2"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

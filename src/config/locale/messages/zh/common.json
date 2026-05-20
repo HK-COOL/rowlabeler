@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Excel 批量序列生成器 - 行标签与公式生成",
+    "description": "不用拖拽 40 万行，快速生成 Excel 序列公式、账号标签、行号编号和 CSV 预览。",
+    "keywords": "Excel 序列生成器, Excel 公式生成器, 批量行标签生成器, Account1 Account2 生成器, Excel 不拖拽填充"
+  },
+  "sign": {
+    "sign_in_title": "登录",
+    "sign_in_description": "登录你的账号",
+    "sign_up_title": "注册",
+    "sign_up_description": "创建账号",
+    "email_title": "邮箱",
+    "email_placeholder": "请输入邮箱",
+    "password_title": "密码",
+    "password_placeholder": "请输入密码",
+    "forgot_password": "忘记密码？",
+    "or": "或",
+    "continue": "继续",
+    "no_account": "还没有账号？",
+    "already_have_account": "已有账号？",
+    "email_sign_in": "使用邮箱登录",
+    "google_sign_in_title": "使用 Google 登录",
+    "github_sign_in_title": "使用 GitHub 登录",
+    "close_title": "关闭",
+    "cancel_title": "取消",
+    "sign_out_title": "退出登录",
+    "billing_title": "账单",
+    "name_title": "姓名",
+    "name_placeholder": "请输入姓名",
+    "email_verification_hint": "请使用可以访问的邮箱地址。注册后需要验证邮箱。",
+    "admin_title": "管理系统",
+    "credits_title": "积分：{credits}",
+    "verify_email_sent": "验证邮件已发送，请检查收件箱。",
+    "verify_email_required": "请先验证邮箱地址再登录。",
+    "resend_verification": "重新发送验证邮件",
+    "resend_verification_sent": "验证邮件已重新发送，请检查收件箱。",
+    "verify_email_page_title": "检查你的邮箱",
+    "verify_email_page_description": "要继续，请点击发送到此邮箱的链接",
+    "verify_email_continue": "继续",
+    "verify_email_tip": "验证完成后点击继续。",
+    "verify_email_not_verified_yet": "还没有验证。请先点击邮件中的链接。",
+    "verify_email_account_mismatch": "当前登录为 {current}，此页面等待 {expected}。",
+    "resend_verification_countdown": "重新发送验证邮件（{seconds}s）",
+    "resend_verification_wait": "请等待 {seconds}s 后再重新发送。",
+    "back_to_sign_in": "返回登录"
+  },
+  "payment": {
+    "choose_payment_method": "选择支付方式",
+    "choose_payment_method_description": "",
+    "cancel_title": "取消"
+  },
+  "locale_detector": {
+    "title": "检测到你的浏览器语言是 {locale}，是否切换？",
+    "switch_to": "切换到 {locale}"
+  }
+}

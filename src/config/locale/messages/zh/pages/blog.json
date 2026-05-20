@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "title": "Excel 序列教程",
+    "description": "实用 Excel 序列教程，帮助你不用拖拽生成账号标签、行号、公式和 CSV 文本。"
+  },
+  "page": {
+    "title": "Excel 序列教程",
+    "sections": {
+      "blog": {
+        "id": "blog",
+        "title": "Excel 序列教程",
+        "description": "围绕批量标签、序列公式和不拖拽填充的实用表格教程。"
+      }
+    }
+  },
+  "messages": {
+    "all": "全部",
+    "no_content": "暂无内容",
+    "crumb": "博客",
+    "toc": "目录"
+  }
+}

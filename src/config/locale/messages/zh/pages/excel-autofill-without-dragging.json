@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "title": "Excel 不拖拽自动填充 - 快速填充长序列",
+    "description": "不用拖拽 Excel 填充柄穿过几千行。生成序列公式和标签，快速完成长序列填充。"
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Excel 不拖拽自动填充",
+        "highlight_text": "不拖拽",
+        "description": "表格有几千行甚至几十万行时，拖拽填充柄很容易出错。生成一次公式，粘贴到该放的位置即可。",
+        "announcement": {
+          "badge": "工作流",
+          "title": "适合长序列和重复标签填充",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "跳过拖拽",
+            "icon": "MousePointer2",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "批量行标签页",
+            "icon": "Rows3",
+            "url": "/bulk-row-label-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel 不拖拽自动填充预览",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "表格背景"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "用公式替代拖拽填充柄",
+        "description": "长序列用公式更容易检查、复用，也更不容易停在错误行。",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "自动填充公式预览"
+        },
+        "items": [
+          {
+            "title": "不用长距离滚动",
+            "description": "不用为了创建编号标签一路拖过大量行。",
+            "icon": "MousePointer2"
+          },
+          {
+            "title": "模式可复用",
+            "description": "前缀、行数、步长、补零规则都可以重复用于新的工作表。",
+            "icon": "Repeat"
+          },
+          {
+            "title": "粘贴前可预览",
+            "description": "先检查前几行生成结果，再把公式放进 Excel。",
+            "icon": "ClipboardCheck"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "更稳的自动填充流程",
+        "description": "先生成序列规则，再检查并复制到 Excel。",
+        "items": [
+          {
+            "title": "定义序列",
+            "description": "设置起始数字、行数、步长、前缀和格式。"
+          },
+          {
+            "title": "复制公式",
+            "description": "Excel 365 用 SEQUENCE，旧版 Excel 用 ROW。"
+          },
+          {
+            "title": "从一个单元格填充",
+            "description": "粘贴到目标首个单元格，让 Excel 生成整列序列。"
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "id": "related",
+        "title": "相关长序列任务",
+        "description": "这些页面覆盖相邻的表格搜索意图。",
+        "items": [
+          {
+            "title": "Excel 序列公式",
+            "description": "适合想直接找公式模式的用户。",
+            "icon": "Sigma"
+          },
+          {
+            "title": "Account1 Account2 标签",
+            "description": "适合账号和 ID 命名模式。",
+            "icon": "Tags"
+          },
+          {
+            "title": "批量行标签",
+            "description": "适合导出、报表和运营标签。",
+            "icon": "Rows3"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "不拖拽自动填充常见问题",
+        "items": [
+          {
+            "question": "为什么不直接拖拽填充柄？",
+            "answer": "小表格可以拖拽，但长范围拖拽很慢，也更容易拖错行。"
+          },
+          {
+            "question": "这个会替代 Excel 自动填充吗？",
+            "answer": "它提供的是公式捷径，用来生成同类编号输出。"
+          },
+          {
+            "question": "生成值能用于 Excel 之外吗？",
+            "answer": "可以。复制纯文本或 CSV 预览即可给其他工具使用。"
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "生成填充序列公式",
+        "description": "跳过手动拖拽，用输入项创建 Excel 序列。",
+        "buttons": [
+          {
+            "title": "打开生成器",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "MousePointer2"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

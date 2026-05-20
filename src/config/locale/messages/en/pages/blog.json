@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "title": "Excel Sequence Guides",
+    "description": "Practical Excel sequence tutorials for generating account labels, row numbers, formulas, and CSV-ready lists without dragging."
+  },
+  "page": {
+    "title": "Excel Sequence Guides",
+    "sections": {
+      "blog": {
+        "id": "blog",
+        "title": "Excel Sequence Guides",
+        "description": "Step-by-step spreadsheet tutorials for bulk labels, sequence formulas, and no-drag autofill workflows."
+      }
+    }
+  },
+  "messages": {
+    "all": "All",
+    "no_content": "No Content",
+    "crumb": "Blog",
+    "toc": "Table of Contents"
+  }
+}

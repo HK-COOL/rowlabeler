@@ -1,0 +1,157 @@
+{
+  "header": {
+    "id": "header",
+    "brand": {
+      "title": "Excel Sequence Generator",
+      "logo": {
+        "src": "/logo.svg",
+        "alt": "Excel Sequence Generator",
+        "width": 100,
+        "height": 100
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "Generator",
+          "url": "/#generator",
+          "icon": "ListOrdered"
+        },
+        {
+          "title": "Use Cases",
+          "url": "/#use-cases",
+          "icon": "TableProperties"
+        },
+        {
+          "title": "How It Works",
+          "url": "/#workflow",
+          "icon": "Workflow"
+        },
+        {
+          "title": "FAQ",
+          "url": "/#faq",
+          "icon": "CircleHelp"
+        }
+      ]
+    },
+    "buttons": [],
+    "user_nav": {
+      "show_name": false,
+      "show_credits": false,
+      "show_sign_out": true,
+      "items": []
+    },
+    "show_sign": false,
+    "show_theme": true,
+    "show_locale": true
+  },
+  "footer": {
+    "id": "footer",
+    "show_built_with": false,
+    "brand": {
+      "title": "Excel Sequence Generator",
+      "description": "A lightweight Excel helper for generating bulk row labels, formulas, and CSV previews without dragging.",
+      "logo": {
+        "src": "/logo.svg",
+        "alt": "Excel Sequence Generator",
+        "width": 1024,
+        "height": 1024
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "Tool",
+          "children": [
+            {
+              "title": "Generator",
+              "url": "/#generator",
+              "target": "_self"
+            },
+            {
+              "title": "Use Cases",
+              "url": "/#use-cases",
+              "target": "_self"
+            },
+            {
+              "title": "FAQ",
+              "url": "/#faq",
+              "target": "_self"
+            },
+            {
+              "title": "400k Account guide",
+              "url": "/blog/generate-400000-account-labels-without-dragging",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Popular Searches",
+          "children": [
+            {
+              "title": "Account1 Account2 generator",
+              "url": "/excel-account-generator",
+              "target": "_self"
+            },
+            {
+              "title": "Excel autofill without dragging",
+              "url": "/excel-autofill-without-dragging",
+              "target": "_self"
+            },
+            {
+              "title": "Bulk row label generator",
+              "url": "/bulk-row-label-generator",
+              "target": "_self"
+            },
+            {
+              "title": "Excel sequence formula generator",
+              "url": "/excel-sequence-formula-generator",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Legal",
+          "children": [
+            {
+              "title": "Privacy Policy",
+              "url": "/privacy-policy",
+              "target": "_self"
+            },
+            {
+              "title": "Terms of Service",
+              "url": "/terms-of-service",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    },
+    "social": {
+      "items": [
+        {
+          "title": "Email",
+          "icon": "Mail",
+          "url": "mailto:support@example.com",
+          "target": "_self"
+        }
+      ]
+    },
+    "agreement": {
+      "items": [
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "Terms of Service",
+          "url": "/terms-of-service"
+        }
+      ]
+    },
+    "show_theme": true,
+    "show_locale": true
+  }
+}

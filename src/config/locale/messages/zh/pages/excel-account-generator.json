@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "title": "Excel Account1 Account2 生成器 - 批量账号标签",
+    "description": "生成 Account1、Account2 和大批量 Excel 账号标签，支持公式、补零、CSV 预览，不用拖拽填充柄。"
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Excel Account1 Account2 生成器",
+        "highlight_text": "Account1 Account2",
+        "description": "为几百行、几千行甚至几十万行生成账号标签，不需要手动拖拽 Excel 填充柄。",
+        "announcement": {
+          "badge": "场景页",
+          "title": "适合账号 ID、行标签、批次标签和导入名单",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "生成账号标签",
+            "icon": "ListOrdered",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "查看公式页",
+            "icon": "Sigma",
+            "url": "/excel-sequence-formula-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel 账号标签生成器预览",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "表格背景"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "不用 Excel 手工技巧，也能批量生成账号标签",
+        "description": "像 Account1 到 Account400000 这类需求，最稳的方式是复制一个公式，或者复制一段固定值预览。",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel 账号标签输出"
+        },
+        "items": [
+          {
+            "title": "前缀可控",
+            "description": "支持 Account、Client、User、Invoice、Ticket、Batch、SKU 等任意短前缀。",
+            "icon": "Type"
+          },
+          {
+            "title": "支持大行数",
+            "description": "可以为很大的行数生成公式，同时限制浏览器预览，避免页面卡顿。",
+            "icon": "Rows3"
+          },
+          {
+            "title": "支持补零格式",
+            "description": "需要 Account0001 这类固定宽度标签时，设置补零位数即可。",
+            "icon": "BadgeCheck"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "如何在 Excel 里生成 Account1、Account2 标签",
+        "description": "先用生成器拿到公式，再粘贴回工作簿。",
+        "items": [
+          {
+            "title": "输入 Account 前缀",
+            "description": "设置起始数字、生成行数、步长、分隔符和补零位数。"
+          },
+          {
+            "title": "复制公式",
+            "description": "Excel 365 用 SEQUENCE 公式，旧版 Excel 用 ROW 公式。"
+          },
+          {
+            "title": "粘贴到首个单元格",
+            "description": "让 Excel 动态生成标签，或复制固定预览值用于导入。"
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "id": "related",
+        "title": "相关 Excel 序列页面",
+        "description": "围绕同一个生成器覆盖不同搜索意图。",
+        "items": [
+          {
+            "title": "Excel 序列公式生成器",
+            "description": "适合主要想找 SEQUENCE 或 ROW 公式的用户。",
+            "icon": "Sigma"
+          },
+          {
+            "title": "Excel 不拖拽自动填充",
+            "description": "适合想避免长距离拖拽填充柄的用户。",
+            "icon": "MousePointer2"
+          },
+          {
+            "title": "批量行标签生成器",
+            "description": "适合账号之外的批次、工单、SKU 等标签。",
+            "icon": "Tags"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "账号标签生成器常见问题",
+        "items": [
+          {
+            "question": "能生成 Account1 到 Account400000 吗？",
+            "answer": "可以。前缀填 Account，起始数字填 1，生成行数填 400000，然后复制生成的 Excel 公式。"
+          },
+          {
+            "question": "能生成 Account-0001 这种格式吗？",
+            "answer": "可以。分隔符填连字符，补零位数设为 4。"
+          },
+          {
+            "question": "这个页面会修改我的 Excel 文件吗？",
+            "answer": "不会。它只生成可复制的公式和预览值。"
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "生成你的账号标签公式",
+        "description": "打开免费的 Excel 生成器，几秒钟得到序列公式。",
+        "buttons": [
+          {
+            "title": "打开生成器",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "ListOrdered"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "header": {
+    "id": "header",
+    "brand": {
+      "title": "Excel 批量序列生成器",
+      "logo": {
+        "src": "/logo.svg",
+        "alt": "Excel 批量序列生成器",
+        "width": 100,
+        "height": 100
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "生成器",
+          "url": "/#generator",
+          "icon": "ListOrdered"
+        },
+        {
+          "title": "使用场景",
+          "url": "/#use-cases",
+          "icon": "TableProperties"
+        },
+        {
+          "title": "工作流",
+          "url": "/#workflow",
+          "icon": "Workflow"
+        },
+        {
+          "title": "常见问题",
+          "url": "/#faq",
+          "icon": "CircleHelp"
+        }
+      ]
+    },
+    "buttons": [],
+    "user_nav": {
+      "show_name": false,
+      "show_credits": false,
+      "show_sign_out": true,
+      "items": []
+    },
+    "show_sign": false,
+    "show_theme": true,
+    "show_locale": true
+  },
+  "footer": {
+    "id": "footer",
+    "show_built_with": false,
+    "brand": {
+      "title": "Excel 批量序列生成器",
+      "description": "轻量 Excel 辅助工具，用来生成批量行标签、序列公式和 CSV 预览，不用一行行拖拽。",
+      "logo": {
+        "src": "/logo.svg",
+        "alt": "Excel 批量序列生成器",
+        "width": 1024,
+        "height": 1024
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "工具",
+          "children": [
+            {
+              "title": "生成器",
+              "url": "/#generator",
+              "target": "_self"
+            },
+            {
+              "title": "使用场景",
+              "url": "/#use-cases",
+              "target": "_self"
+            },
+            {
+              "title": "常见问题",
+              "url": "/#faq",
+              "target": "_self"
+            },
+            {
+              "title": "40 万行 Account 教程",
+              "url": "/blog/generate-400000-account-labels-without-dragging",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "热门搜索",
+          "children": [
+            {
+              "title": "Account1 Account2 生成器",
+              "url": "/excel-account-generator",
+              "target": "_self"
+            },
+            {
+              "title": "Excel 不拖拽自动填充",
+              "url": "/excel-autofill-without-dragging",
+              "target": "_self"
+            },
+            {
+              "title": "批量行标签生成器",
+              "url": "/bulk-row-label-generator",
+              "target": "_self"
+            },
+            {
+              "title": "Excel 序列公式生成器",
+              "url": "/excel-sequence-formula-generator",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "法律",
+          "children": [
+            {
+              "title": "隐私政策",
+              "url": "/privacy-policy",
+              "target": "_self"
+            },
+            {
+              "title": "服务条款",
+              "url": "/terms-of-service",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    },
+    "social": {
+      "items": [
+        {
+          "title": "Email",
+          "icon": "Mail",
+          "url": "mailto:support@example.com",
+          "target": "_self"
+        }
+      ]
+    },
+    "agreement": {
+      "items": [
+        {
+          "title": "隐私政策",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "服务条款",
+          "url": "/terms-of-service"
+        }
+      ]
+    },
+    "show_theme": true,
+    "show_locale": true
+  }
+}

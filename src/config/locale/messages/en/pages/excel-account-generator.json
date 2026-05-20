@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "title": "Excel Account1 Account2 Generator - Bulk Account Labels",
+    "description": "Generate Account1, Account2, and bulk Excel account labels with formulas, padding, CSV previews, and no fill-handle dragging."
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Excel Account1 Account2 generator",
+        "highlight_text": "Account1 Account2",
+        "description": "Create account labels for hundreds or hundreds of thousands of Excel rows without manually dragging the fill handle.",
+        "announcement": {
+          "badge": "Use case",
+          "title": "Best for account IDs, row labels, batch labels, and import lists",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "Generate Account Labels",
+            "icon": "ListOrdered",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "Sequence Formula Page",
+            "icon": "Sigma",
+            "url": "/excel-sequence-formula-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel Account label generator preview",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "spreadsheet background"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "Generate account labels without the manual Excel workaround",
+        "description": "For Account1 to Account400000 style labels, the fastest path is a formula you can paste into the first cell, or a copied preview when you need fixed values.",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Account labels generated for Excel"
+        },
+        "items": [
+          {
+            "title": "Prefix control",
+            "description": "Use Account, Client, User, Invoice, Ticket, Batch, SKU, or any short label prefix.",
+            "icon": "Type"
+          },
+          {
+            "title": "Large row counts",
+            "description": "Generate formulas for very large counts while keeping the browser preview limited and fast.",
+            "icon": "Rows3"
+          },
+          {
+            "title": "Optional padding",
+            "description": "Switch from Account1 to Account0001 when imports or reports need fixed-width labels.",
+            "icon": "BadgeCheck"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "How to make Account1, Account2 labels in Excel",
+        "description": "Use the generator for the formula, then paste the result into your workbook.",
+        "items": [
+          {
+            "title": "Enter Account as the prefix",
+            "description": "Set the start number, row count, step, separator, and padding."
+          },
+          {
+            "title": "Copy the formula",
+            "description": "Use SEQUENCE in Excel 365, or the ROW formula for older Excel versions."
+          },
+          {
+            "title": "Paste into the first cell",
+            "description": "Let Excel fill the labels dynamically, or copy fixed preview values for imports."
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "id": "related",
+        "title": "Related Excel sequence pages",
+        "description": "Move between the common search intents without losing the path back to the generator.",
+        "items": [
+          {
+            "title": "Excel sequence formula generator",
+            "description": "For users who mainly need the SEQUENCE or ROW formula.",
+            "icon": "Sigma"
+          },
+          {
+            "title": "Excel autofill without dragging",
+            "description": "For users trying to avoid long manual fill-handle operations.",
+            "icon": "MousePointer2"
+          },
+          {
+            "title": "Bulk row label generator",
+            "description": "For labels beyond the Account naming pattern.",
+            "icon": "Tags"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Account label generator FAQ",
+        "items": [
+          {
+            "question": "Can I generate Account1 through Account400000?",
+            "answer": "Yes. Enter Account as the prefix, start at 1, set rows to 400000, and copy the generated Excel formula."
+          },
+          {
+            "question": "Can I generate Account-0001 labels?",
+            "answer": "Yes. Use a hyphen separator and set zero padding to 4."
+          },
+          {
+            "question": "Does this edit my workbook?",
+            "answer": "No. It only creates formulas and previews for you to copy."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Generate your account label formula",
+        "description": "Open the free Excel generator and create the sequence pattern in seconds.",
+        "buttons": [
+          {
+            "title": "Open Generator",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "ListOrdered"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

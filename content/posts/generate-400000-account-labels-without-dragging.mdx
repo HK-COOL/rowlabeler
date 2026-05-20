@@ -1,0 +1,101 @@
+---
+title: How to Generate 400,000 Account Labels in Excel Without Dragging
+description: Learn the fastest way to create Account1 through Account400000 labels with Excel formulas, a safe preview, and copy-ready output.
+created_at: 2026-05-20
+author_name: Excel Sequence Generator
+author_image: /logo.png
+image: /preview.svg
+---
+
+Dragging the fill handle is fine for twenty rows. It is the wrong move when you need `Account1` through `Account400000`.
+
+This guide shows two reliable ways to create a large account-label sequence in Excel, plus when to use the [free generator](/#generator) if you want the formula and preview prepared for you.
+
+## The Goal
+
+You want one column that looks like this:
+
+```text
+Account1
+Account2
+Account3
+...
+Account400000
+```
+
+The important part is that Excel should produce the sequence from a rule. You should not have to drag through hundreds of thousands of rows or risk stopping at the wrong place.
+
+## Fastest Formula for Excel 365
+
+If your Excel version supports `SEQUENCE`, use this formula:
+
+```text
+="Account"&SEQUENCE(400000,1,1,1)
+```
+
+What each part means:
+
+- `"Account"` is the fixed text prefix.
+- `400000` is the number of rows to generate.
+- The first `1` starts the numbering at 1.
+- The final `1` increments by one for each row.
+
+Paste the formula into the first cell where you want the labels. Excel 365 will spill the generated labels down the column.
+
+## Formula for Older Excel Versions
+
+If `SEQUENCE` is not available, use a `ROW`-based formula instead:
+
+```text
+="Account"&(1+(ROW(A1)-1)*1)
+```
+
+Paste it into the first row, then copy it down as far as needed. This still uses a deterministic row rule, so it is safer than manually editing labels.
+
+For very large sheets, consider generating the formula first, then using Excel's name box or fill commands instead of hand-dragging the fill handle.
+
+## Use the Generator When You Need Variations
+
+The [Excel Sequence Generator](/#generator) is useful when the labels are not exactly `Account1`, `Account2`, `Account3`.
+
+It can create:
+
+- Plain labels like `Account1`.
+- Separated labels like `SKU-1`.
+- Zero-padded labels like `SKU-0001`.
+- Different starting numbers, row counts, and steps.
+- A short plain-text or CSV preview before you copy anything.
+
+For the exact 400,000-row Account example, open the generator and use:
+
+```text
+Prefix: Account
+Start: 1
+Rows: 400000
+Step: 1
+Separator: empty
+Zero padding: 0
+```
+
+Then copy the Excel 365 formula, legacy formula, plain-text preview, or CSV preview depending on your workflow.
+
+## Related Excel Sequence Pages
+
+If your sequence uses a slightly different pattern, these focused pages may be faster:
+
+- [Account1 Account2 generator](/excel-account-generator)
+- [Excel sequence formula generator](/excel-sequence-formula-generator)
+- [Excel autofill without dragging](/excel-autofill-without-dragging)
+- [Bulk row label generator](/bulk-row-label-generator)
+
+## Quick Checklist
+
+Before pasting a large sequence into a real workbook:
+
+- Confirm the prefix is exactly what you need.
+- Confirm the row count is correct.
+- Preview the first few generated labels.
+- Use zero padding only when IDs need a fixed width.
+- Keep a backup copy of the workbook before filling hundreds of thousands of rows.
+
+That is the whole job: describe the sequence once, let Excel or the generator build it, and avoid the slow scroll to row 400,000.
