@@ -1,9 +1,16 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { getThemePage } from '@/core/theme';
+import { getMetadata } from '@/shared/lib/seo';
+import { buildWebApplicationJsonLd } from '@/shared/lib/structured-data';
 import { DynamicPage } from '@/shared/types/blocks/landing';
 
 export const revalidate = 3600;
+
+export const generateMetadata = getMetadata({
+  metadataKey: 'pages.index.metadata',
+  canonicalUrl: '/',
+});
 
 export default async function LandingPage({
   params,
@@ -20,6 +27,20 @@ export default async function LandingPage({
 
   // load page component
   const Page = await getThemePage('dynamic-page');
+  const metadata = t.raw('metadata');
+  const jsonLd = buildWebApplicationJsonLd({
+    name: 'Rowlabeler',
+    url: locale === 'zh' ? 'https://rowlabeler.com/zh' : 'https://rowlabeler.com/',
+    description: metadata.description,
+  });
 
-  return <Page locale={locale} page={page} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Page locale={locale} page={page} />
+    </>
+  );
 }

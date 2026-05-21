@@ -21,6 +21,7 @@ import {
   ExcelSequenceErrorCode,
   EXCEL_SEQUENCE_PREVIEW_LIMIT,
   generateExcelSequenceCsv,
+  generateExcelSequenceText,
 } from '@/shared/lib/excel-sequence-generator';
 import { cn } from '@/shared/lib/utils';
 import { Section } from '@/shared/types/blocks/landing';
@@ -68,6 +69,8 @@ const defaultLabels = {
   outputBlocked: 'Waiting for valid inputs',
   downloadCsv: 'Download CSV',
   downloadedCsv: 'Downloaded',
+  downloadText: 'Download TXT',
+  downloadedText: 'Downloaded',
 };
 
 const defaultExamples: ExampleInput[] = [
@@ -142,6 +145,7 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
   const [input, setInput] = useState<ExcelSequenceInput>(initialInput);
   const [copiedKey, setCopiedKey] = useState<CopyKey | null>(null);
   const [downloaded, setDownloaded] = useState(false);
+  const [downloadedText, setDownloadedText] = useState(false);
   const result = useMemo(() => calculateExcelSequence(input), [input]);
   const previewRowCount = result.ok ? result.previewCount : 0;
   const outputStatusLabel = result.ok ? labels.outputReady : labels.outputBlocked;
@@ -165,12 +169,14 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
     setInput((current) => ({ ...current, [key]: value }));
     setCopiedKey(null);
     setDownloaded(false);
+    setDownloadedText(false);
   };
 
   const applyExample = (example: ExampleInput) => {
     setInput(example);
     setCopiedKey(null);
     setDownloaded(false);
+    setDownloadedText(false);
   };
 
   const copyValue = async (key: CopyKey, value: string) => {
@@ -215,6 +221,32 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
     setDownloaded(true);
+  };
+
+  const downloadText = () => {
+    if (!result.ok) {
+      return;
+    }
+
+    const text = generateExcelSequenceText(input);
+    if (!text) {
+      return;
+    }
+
+    const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    const safePrefix = input.prefix.trim().replace(/[^a-z0-9-]+/gi, '-');
+
+    link.href = url;
+    link.download = `${safePrefix || 'excel-sequence'}-${fieldValue(
+      input.count
+    )}-rows.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    setDownloadedText(true);
   };
 
   const renderCopyButton = (key: CopyKey, value: string) => (
@@ -281,7 +313,12 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
                 type="button"
                 variant="ghost"
                 size="sm"
-                onClick={() => setInput(initialInput)}
+                onClick={() => {
+                  setInput(initialInput);
+                  setCopiedKey(null);
+                  setDownloaded(false);
+                  setDownloadedText(false);
+                }}
                 className="shrink-0"
               >
                 <RotateCcw className="size-4" />
@@ -501,23 +538,44 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
                   value={previewRowCount.toLocaleString()}
                 />
               </div>
-              <Button
-                type="button"
-                variant="default"
-                size="sm"
-                onClick={downloadCsv}
-                disabled={!result.ok}
-                className="w-full sm:w-auto"
-              >
-                {downloaded ? (
-                  <CheckCircle2 className="size-4" />
-                ) : (
-                  <Download className="size-4" />
-                )}
-                <span>
-                  {downloaded ? labels.downloadedCsv : labels.downloadCsv}
-                </span>
-              </Button>
+              <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
+                <Button
+                  type="button"
+                  variant="default"
+                  size="sm"
+                  onClick={downloadCsv}
+                  disabled={!result.ok}
+                  className="w-full sm:w-auto"
+                >
+                  {downloaded ? (
+                    <CheckCircle2 className="size-4" />
+                  ) : (
+                    <Download className="size-4" />
+                  )}
+                  <span>
+                    {downloaded ? labels.downloadedCsv : labels.downloadCsv}
+                  </span>
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={downloadText}
+                  disabled={!result.ok}
+                  className="w-full sm:w-auto"
+                >
+                  {downloadedText ? (
+                    <CheckCircle2 className="size-4" />
+                  ) : (
+                    <Download className="size-4" />
+                  )}
+                  <span>
+                    {downloadedText
+                      ? labels.downloadedText
+                      : labels.downloadText}
+                  </span>
+                </Button>
+              </div>
             </div>
 
             <div className="grid min-w-0 gap-4 xl:grid-cols-2">

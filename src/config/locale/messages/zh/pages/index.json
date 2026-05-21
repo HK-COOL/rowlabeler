@@ -1,4 +1,9 @@
 {
+  "metadata": {
+    "title": "Rowlabeler - Excel 批量序列与行标签生成器",
+    "description": "不用拖拽生成 Excel 行标签、账号编号、SKU 序列、公式、纯文本预览和 CSV 输出，适合几十万行批量编号。",
+    "keywords": "Excel 批量序列生成器, 行标签生成器, Excel 公式生成器, 账号编号生成器, CSV 序列生成器"
+  },
   "page": {
     "show_sections": [
       "hero",
@@ -87,7 +92,9 @@
           "outputReady": "可以复制",
           "outputBlocked": "等待有效输入",
           "downloadCsv": "下载 CSV",
-          "downloadedCsv": "已下载"
+          "downloadedCsv": "已下载",
+          "downloadText": "下载 TXT",
+          "downloadedText": "已下载"
         },
         "errorMessages": {
           "prefix-required": "请输入前缀，例如 Account、Item、SKU 或 Row。",

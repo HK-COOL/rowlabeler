@@ -1,4 +1,9 @@
 {
+  "metadata": {
+    "title": "Rowlabeler - Excel Sequence Generator for Bulk Row Labels",
+    "description": "Generate Excel row labels, account IDs, SKU sequences, formulas, text previews, and CSV output without dragging hundreds of thousands of rows.",
+    "keywords": "excel sequence generator, row label generator, excel formula generator, account label generator, csv sequence generator"
+  },
   "page": {
     "show_sections": [
       "hero",
@@ -87,7 +92,9 @@
           "outputReady": "Ready to copy",
           "outputBlocked": "Waiting for valid inputs",
           "downloadCsv": "Download CSV",
-          "downloadedCsv": "Downloaded"
+          "downloadedCsv": "Downloaded",
+          "downloadText": "Download TXT",
+          "downloadedText": "Downloaded"
         },
         "errorMessages": {
           "prefix-required": "Enter a prefix such as Account, Item, SKU, or Row.",

@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { getThemePage } from '@/core/theme';
-import { envConfigs } from '@/config';
+import { buildLocalizedAlternates } from '@/shared/lib/seo';
+import { buildBreadcrumbJsonLd } from '@/shared/lib/structured-data';
 import { getLocalPage } from '@/shared/models/post';
 
 export const revalidate = 3600;
@@ -18,7 +19,7 @@ export async function generateMetadata({
   // metadata values
   let title = '';
   let description = '';
-  let canonicalUrl = '';
+  let alternates = buildLocalizedAlternates('/', locale);
 
   // 1. try to get static page metadata from
   // content/pages/**/*.mdx
@@ -32,11 +33,7 @@ export async function generateMetadata({
     return;
   }
 
-  // build canonical url
-  canonicalUrl =
-    locale !== envConfigs.locale
-      ? `${envConfigs.app_url}/${locale}/${staticPageSlug}`
-      : `${envConfigs.app_url}/${staticPageSlug}`;
+  alternates = buildLocalizedAlternates(staticPageSlug, locale);
 
   // get static page content
   const staticPage = await getLocalPage({ slug: staticPageSlug, locale });
@@ -49,9 +46,7 @@ export async function generateMetadata({
     return {
       title,
       description,
-      alternates: {
-        canonical: canonicalUrl,
-      },
+      alternates,
     };
   }
 
@@ -73,9 +68,7 @@ export async function generateMetadata({
     return {
       title,
       description,
-      alternates: {
-        canonical: canonicalUrl,
-      },
+      alternates,
     };
   }
 
@@ -88,9 +81,7 @@ export async function generateMetadata({
   return {
     title,
     description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates,
   };
 }
 
@@ -120,8 +111,26 @@ export default async function DynamicPage({
   // return static page
   if (staticPage) {
     const Page = await getThemePage('static-page');
+    const jsonLd = buildBreadcrumbJsonLd(staticPageSlug, [
+      {
+        name: locale === 'zh' ? '首页' : 'Home',
+        url: buildLocalizedAlternates('/', locale).canonical,
+      },
+      {
+        name: staticPage.title || staticPageSlug,
+        url: buildLocalizedAlternates(staticPageSlug, locale).canonical,
+      },
+    ]);
 
-    return <Page locale={locale} post={staticPage} />;
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <Page locale={locale} post={staticPage} />
+      </>
+    );
   }
 
   // 2. static page not found
@@ -140,7 +149,30 @@ export default async function DynamicPage({
     // return dynamic page
     if (t.has('page')) {
       const Page = await getThemePage('dynamic-page');
-      return <Page locale={locale} page={t.raw('page')} />;
+      const page = t.raw('page');
+      const pageTitle = t.has('metadata')
+        ? t.raw('metadata.title')
+        : page.title || dynamicPageSlug;
+      const jsonLd = buildBreadcrumbJsonLd(staticPageSlug, [
+        {
+          name: locale === 'zh' ? '首页' : 'Home',
+          url: buildLocalizedAlternates('/', locale).canonical,
+        },
+        {
+          name: pageTitle,
+          url: buildLocalizedAlternates(staticPageSlug, locale).canonical,
+        },
+      ]);
+
+      return (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+          <Page locale={locale} page={page} />
+        </>
+      );
     }
   } catch (error) {
     // ignore error if translation not found

@@ -264,3 +264,13 @@ export function generateExcelSequenceCsv(input: ExcelSequenceInput): string {
 
   return formatCsvRows(values, normalized.outputColumns);
 }
+
+export function generateExcelSequenceText(input: ExcelSequenceInput): string {
+  const { normalized, errors } = validateInput(input);
+
+  if (errors.length > 0) {
+    return '';
+  }
+
+  return buildValues(normalized, normalized.count).join('\n');
+}

@@ -4,6 +4,7 @@ import {
   calculateExcelSequence,
   EXCEL_SEQUENCE_PREVIEW_LIMIT,
   generateExcelSequenceCsv,
+  generateExcelSequenceText,
 } from '../src/shared/lib/excel-sequence-generator';
 
 const basic = calculateExcelSequence({
@@ -81,6 +82,17 @@ const fullCsv = generateExcelSequenceCsv({
 assert.ok(fullCsv.includes('SKU-001,SKU-002'));
 assert.ok(fullCsv.endsWith('SKU-101,SKU-102'));
 assert.equal(fullCsv.split('\n').length, 51);
+
+const fullText = generateExcelSequenceText({
+  prefix: 'SKU',
+  start: 1,
+  count: 3,
+  step: 1,
+  separator: '-',
+  padding: 3,
+});
+
+assert.equal(fullText, 'SKU-001\nSKU-002\nSKU-003');
 
 const large = calculateExcelSequence({
   prefix: 'Account',

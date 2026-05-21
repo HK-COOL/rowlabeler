@@ -1,8 +1,9 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { getThemePage } from '@/core/theme';
-import { envConfigs } from '@/config';
 import { Empty } from '@/shared/blocks/common';
+import { buildLocalizedAlternates } from '@/shared/lib/seo';
+import { buildBreadcrumbJsonLd } from '@/shared/lib/structured-data';
 import { getPost } from '@/shared/models/post';
 import { DynamicPage } from '@/shared/types/blocks/landing';
 
@@ -16,28 +17,21 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const t = await getTranslations('pages.blog.metadata');
 
-  const canonicalUrl =
-    locale !== envConfigs.locale
-      ? `${envConfigs.app_url}/${locale}/blog/${slug}`
-      : `${envConfigs.app_url}/blog/${slug}`;
+  const alternates = buildLocalizedAlternates(`/blog/${slug}`, locale);
 
   const post = await getPost({ slug, locale });
   if (!post) {
     return {
       title: `${slug} | ${t('title')}`,
       description: t('description'),
-      alternates: {
-        canonical: canonicalUrl,
-      },
+      alternates,
     };
   }
 
   return {
     title: `${post.title} | ${t('title')}`,
     description: post.description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates,
   };
 }
 
@@ -68,6 +62,28 @@ export default async function BlogDetailPage({
   };
 
   const Page = await getThemePage('dynamic-page');
+  const jsonLd = buildBreadcrumbJsonLd(`/blog/${slug}`, [
+    {
+      name: locale === 'zh' ? '首页' : 'Home',
+      url: buildLocalizedAlternates('/', locale).canonical,
+    },
+    {
+      name: locale === 'zh' ? '博客' : 'Blog',
+      url: buildLocalizedAlternates('/blog', locale).canonical,
+    },
+    {
+      name: post.title || slug,
+      url: buildLocalizedAlternates(`/blog/${slug}`, locale).canonical,
+    },
+  ]);
 
-  return <Page locale={locale} page={page} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Page locale={locale} page={page} />
+    </>
+  );
 }

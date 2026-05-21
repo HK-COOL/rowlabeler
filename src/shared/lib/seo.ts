@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { envConfigs } from '@/config';
-import { defaultLocale } from '@/config/locale';
+import { defaultLocale, locales } from '@/config/locale';
 
 // get metadata for page component
 export function getMetadata(
@@ -46,10 +46,9 @@ export function getMetadata(
       );
     }
 
-    // canonical url
-    const canonicalUrl = await getCanonicalUrl(
-      options.canonicalUrl || '',
-      locale || ''
+    const alternates = buildLocalizedAlternates(
+      options.canonicalUrl || '/',
+      locale || defaultLocale
     );
 
     const title =
@@ -86,14 +85,12 @@ export function getMetadata(
         passedMetadata.keywords ||
         translatedMetadata.keywords ||
         defaultMetadata.keywords,
-      alternates: {
-        canonical: canonicalUrl,
-      },
+      alternates,
 
       openGraph: {
         type: 'website',
         locale: locale,
-        url: canonicalUrl,
+        url: alternates.canonical,
         title,
         description,
         siteName: appName,
@@ -129,28 +126,76 @@ async function getTranslatedMetadata(metadataKey: string, locale: string) {
   };
 }
 
-async function getCanonicalUrl(canonicalUrl: string, locale: string) {
-  if (!canonicalUrl) {
-    canonicalUrl = '/';
+export function buildLocalizedAlternates(
+  pathOrUrl: string,
+  locale: string
+): {
+  canonical: string;
+  languages: Record<string, string>;
+} {
+  const publicPath = getPublicPathFromUrl(pathOrUrl || '/');
+  const languages = Object.fromEntries(
+    locales.map((targetLocale) => [
+      targetLocale,
+      buildLocalizedUrl(publicPath, targetLocale),
+    ])
+  ) as Record<string, string>;
+
+  languages['x-default'] = buildLocalizedUrl(publicPath, defaultLocale);
+
+  return {
+    canonical: buildLocalizedUrl(publicPath, locale || defaultLocale),
+    languages,
+  };
+}
+
+export function getPublicPathFromUrl(pathOrUrl: string): string {
+  let path = pathOrUrl || '/';
+
+  if (path.startsWith('http')) {
+    try {
+      path = new URL(path).pathname;
+    } catch {
+      path = '/';
+    }
   }
 
-  if (canonicalUrl.startsWith('http')) {
-    // full url
-    canonicalUrl = canonicalUrl;
-  } else {
-    // relative path
-    if (!canonicalUrl.startsWith('/')) {
-      canonicalUrl = `/${canonicalUrl}`;
-    }
-
-    canonicalUrl = `${envConfigs.app_url}${
-      !locale || locale === defaultLocale ? '' : `/${locale}`
-    }${canonicalUrl}`;
-
-    if (locale !== defaultLocale && canonicalUrl.endsWith('/')) {
-      canonicalUrl = canonicalUrl.slice(0, -1);
-    }
+  if (!path.startsWith('/')) {
+    path = `/${path}`;
   }
 
-  return canonicalUrl;
+  const pathParts = path.split('/').filter(Boolean);
+  const firstPart = pathParts[0];
+
+  if (firstPart && locales.includes(firstPart)) {
+    pathParts.shift();
+    path = `/${pathParts.join('/')}`;
+  }
+
+  return normalizePath(path);
+}
+
+function buildLocalizedUrl(path: string, locale: string): string {
+  const normalizedPath = normalizePath(path);
+  const localizedPath =
+    locale && locale !== defaultLocale
+      ? normalizePath(`/${locale}${normalizedPath}`)
+      : normalizedPath;
+  const trimmedAppUrl = envConfigs.app_url.replace(/\/$/, '');
+
+  if (localizedPath === '/') {
+    return `${trimmedAppUrl}/`;
+  }
+
+  return `${trimmedAppUrl}${localizedPath}`;
+}
+
+function normalizePath(path: string): string {
+  if (!path || path === '/') {
+    return '/';
+  }
+
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+
+  return normalizedPath.replace(/\/$/, '');
 }
