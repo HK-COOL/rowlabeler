@@ -164,3 +164,18 @@ pnpm exec tsc --noEmit
 Next decision:
 
 - After events accrue, use `toolsite-query-mining` and `toolsite-product-retention-optimizer` to decide between multi-column output improvements and the next commercial long-tail batch.
+
+### 2026-05-21 Commercial Preset Pass
+
+Implemented a low-risk retention improvement while analytics events begin to accrue:
+
+- Changed the SKU preset to a 3-column CSV workflow so the multi-column output feature is visible immediately.
+- Added an invoice numbering preset.
+- Added a purchase order numbering preset.
+- Extended `scripts/verify-site-quality.ts` so both locales must keep invoice, purchase order, and multi-column SKU presets.
+
+Money hypothesis:
+
+```text
+If users can start from SKU, invoice, and purchase-order presets, the `tool_apply_preset` and download events should reveal which business workflow is most valuable before we build more pages or paid assets.
+```

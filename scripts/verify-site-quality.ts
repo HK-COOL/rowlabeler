@@ -13,6 +13,12 @@ const longTailPageSlugs = [
   'invoice-number-generator',
 ];
 
+type HomepageExample = {
+  title: string;
+  prefix: string;
+  outputColumns: number;
+};
+
 async function main() {
   const { buildLocalizedAlternates, getPublicPathFromUrl } = await import(
     '../src/shared/lib/seo'
@@ -103,7 +109,62 @@ async function main() {
     join(process.cwd(), 'src/config/locale/index.ts'),
     'utf8'
   );
-  const sitemap = readFileSync(join(process.cwd(), 'public/sitemap.xml'), 'utf8');
+  const sitemap = readFileSync(
+    join(process.cwd(), 'public/sitemap.xml'),
+    'utf8'
+  );
+  const indexPages = {
+    en: JSON.parse(
+      readFileSync(
+        join(process.cwd(), 'src/config/locale/messages/en/pages/index.json'),
+        'utf8'
+      )
+    ),
+    zh: JSON.parse(
+      readFileSync(
+        join(process.cwd(), 'src/config/locale/messages/zh/pages/index.json'),
+        'utf8'
+      )
+    ),
+  };
+
+  for (const [locale, indexPage] of Object.entries(indexPages)) {
+    const examples: HomepageExample[] =
+      indexPage.page?.sections?.generator?.examples?.map(
+        (example: {
+          title?: string;
+          prefix?: string;
+          outputColumns?: number;
+        }) => ({
+          title: example.title || '',
+          prefix: example.prefix || '',
+          outputColumns: example.outputColumns || 1,
+        })
+      ) || [];
+    const searchableExamples = examples
+      .map((example) => `${example.title} ${example.prefix}`.toLowerCase())
+      .join(' | ');
+
+    assert.ok(
+      searchableExamples.includes('invoice') ||
+        searchableExamples.includes('发票'),
+      `${locale} homepage generator needs an invoice preset`
+    );
+    assert.ok(
+      searchableExamples.includes('po') ||
+        searchableExamples.includes('purchase') ||
+        searchableExamples.includes('采购'),
+      `${locale} homepage generator needs a purchase order preset`
+    );
+    assert.ok(
+      examples.some(
+        (example) =>
+          example.outputColumns >= 3 &&
+          `${example.title} ${example.prefix}`.toLowerCase().includes('sku')
+      ),
+      `${locale} homepage generator needs a multi-column SKU CSV preset`
+    );
+  }
 
   for (const slug of longTailPageSlugs) {
     assert.ok(
@@ -131,7 +192,10 @@ async function main() {
         pageConfig.metadata?.description,
         `${locale}/${slug} needs a description`
       );
-      assert.ok(pageConfig.page?.sections?.hero, `${locale}/${slug} needs hero`);
+      assert.ok(
+        pageConfig.page?.sections?.hero,
+        `${locale}/${slug} needs hero`
+      );
       assert.ok(pageConfig.page?.sections?.faq, `${locale}/${slug} needs FAQ`);
     }
   }

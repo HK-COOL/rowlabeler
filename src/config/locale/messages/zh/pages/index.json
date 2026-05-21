@@ -122,7 +122,26 @@
             "count": 250,
             "step": 1,
             "separator": "-",
-            "padding": 4
+            "padding": 4,
+            "outputColumns": 3
+          },
+          {
+            "title": "发票 INV-2026-0001...",
+            "prefix": "INV",
+            "start": 20260001,
+            "count": 500,
+            "step": 1,
+            "separator": "-",
+            "padding": 0
+          },
+          {
+            "title": "采购 PO-10001...",
+            "prefix": "PO",
+            "start": 10001,
+            "count": 300,
+            "step": 1,
+            "separator": "-",
+            "padding": 0
           },
           {
             "title": "Batch 100...",
@@ -132,16 +151,6 @@
             "step": 5,
             "separator": " ",
             "padding": 0
-          },
-          {
-            "title": "3 列 CSV",
-            "prefix": "Account",
-            "start": 1,
-            "count": 12,
-            "step": 1,
-            "separator": "",
-            "padding": 0,
-            "outputColumns": 3
           }
         ]
       },
