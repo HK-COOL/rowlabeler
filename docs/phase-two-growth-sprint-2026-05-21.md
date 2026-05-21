@@ -179,3 +179,26 @@ Money hypothesis:
 ```text
 If users can start from SKU, invoice, and purchase-order presets, the `tool_apply_preset` and download events should reveal which business workflow is most valuable before we build more pages or paid assets.
 ```
+
+### 2026-05-21 Commercial Long-Tail Batch 1
+
+Implemented the first measured commercial SEO page batch:
+
+- `serial-number-generator-for-excel`
+- `purchase-order-number-generator`
+- English and Chinese locale JSON pages for both URLs.
+- Footer internal links from both locales.
+- Sitemap entries for English and Chinese URLs.
+- `scripts/verify-site-quality.ts` coverage so future page batches cannot miss registration, sitemap entries, metadata, hero, or FAQ.
+
+Money hypothesis:
+
+```text
+If users searching serial number and purchase-order generators are doing asset, procurement, or inventory spreadsheet work, these pages should create higher-intent generator clicks and export events than generic Excel sequence keywords. If one workflow produces repeat downloads, it becomes a candidate for a downloadable template pack before paid accounts are added.
+```
+
+Review metric:
+
+- Search Console impressions for the two new URL pairs.
+- `longtail_cta_click` from the new routes.
+- `tool_apply_preset`, `tool_download_csv`, and `tool_download_txt` after visits to these routes.

@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "title": "Serial Number Generator for Excel - Bulk Number Lists",
+    "description": "Generate serial number sequences for Excel with prefixes, padding, formulas, TXT output, and CSV previews."
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Serial number generator for Excel",
+        "highlight_text": "Serial number",
+        "description": "Create SN-000001, ASSET-1001, equipment tags, and warranty lists without dragging formulas through a spreadsheet.",
+        "announcement": {
+          "badge": "Inventory",
+          "title": "For asset sheets, equipment lists, and product serial imports",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "Generate Serial Numbers",
+            "icon": "Hash",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "SKU Generator",
+            "icon": "Barcode",
+            "url": "/sku-sequence-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Serial number generator preview",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "spreadsheet background"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "Build clean serial number lists for spreadsheet workflows",
+        "description": "Serial numbers often need fixed prefixes, leading zeros, and predictable increments. Generate the list once, then paste formulas or export fixed values.",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Serial numbers generated for Excel"
+        },
+        "items": [
+          {
+            "title": "Asset-friendly prefixes",
+            "description": "Use SN, SERIAL, ASSET, EQP, or a short department code before the number.",
+            "icon": "Type"
+          },
+          {
+            "title": "Sorted padded numbers",
+            "description": "Create SN-000001 style labels that keep the same width and sort correctly.",
+            "icon": "BadgeCheck"
+          },
+          {
+            "title": "CSV-ready output",
+            "description": "Copy Excel formulas, paste fixed values, or download CSV/TXT for import sheets.",
+            "icon": "ClipboardCheck"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "How to make serial numbers in Excel",
+        "description": "Use the generator when a manual fill handle is too slow or easy to misalign.",
+        "items": [
+          {
+            "title": "Choose the serial prefix",
+            "description": "For example, use SN, ASSET, or SERIAL with a hyphen separator."
+          },
+          {
+            "title": "Set count, start, and padding",
+            "description": "Start from the next available number and choose the zero padding that matches your sheet."
+          },
+          {
+            "title": "Copy the output",
+            "description": "Use formulas inside Excel or export fixed values when another system needs an import file."
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "block": "features-list",
+        "id": "related",
+        "title": "Related inventory numbering pages",
+        "description": "Pick the workflow that matches the list you need to create.",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Related inventory numbering pages"
+        },
+        "buttons": [
+          {
+            "title": "SKU Sequence Generator",
+            "url": "/sku-sequence-generator",
+            "target": "_self",
+            "icon": "Barcode",
+            "variant": "outline"
+          },
+          {
+            "title": "Bulk Row Label Generator",
+            "url": "/bulk-row-label-generator",
+            "target": "_self",
+            "icon": "Rows3",
+            "variant": "outline"
+          }
+        ],
+        "items": [
+          {
+            "title": "SKU sequences",
+            "description": "For product, catalog, and marketplace item labels.",
+            "icon": "Barcode"
+          },
+          {
+            "title": "Purchase order numbers",
+            "description": "For PO-10001 style procurement lists and vendor sheets.",
+            "icon": "ClipboardList"
+          },
+          {
+            "title": "Bulk row labels",
+            "description": "For tickets, batches, rows, and general list labels.",
+            "icon": "Rows3"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Serial number generator FAQ",
+        "items": [
+          {
+            "question": "Can I generate SN-000001 style numbers?",
+            "answer": "Yes. Use SN as the prefix, a hyphen separator, start at 1, and set zero padding to 6."
+          },
+          {
+            "question": "Can I export serial numbers as CSV?",
+            "answer": "Yes. Generate the sequence, preview the CSV output, then download or copy the values into your spreadsheet workflow."
+          },
+          {
+            "question": "Is this a serial number database?",
+            "answer": "No. It generates spreadsheet-ready sequences. Keep official product or asset records in your inventory system."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Generate serial numbers now",
+        "description": "Open the generator, enter your serial pattern, and copy the output back to Excel.",
+        "buttons": [
+          {
+            "title": "Open Generator",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "Hash"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

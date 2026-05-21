@@ -11,6 +11,8 @@ const longTailPageSlugs = [
   'bulk-row-label-generator',
   'sku-sequence-generator',
   'invoice-number-generator',
+  'serial-number-generator-for-excel',
+  'purchase-order-number-generator',
 ];
 
 type HomepageExample = {

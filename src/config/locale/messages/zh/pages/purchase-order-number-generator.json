@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "title": "采购订单编号生成器 - 批量生成 PO-10001 序列",
+    "description": "为 Excel、采购表、供应商清单和 CSV 导入批量生成采购订单编号，支持 PO 前缀和补零编号。"
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "采购订单编号生成器",
+        "highlight_text": "采购订单",
+        "description": "批量生成 PO-10001、PO-2026-0001、供应商订单清单和采购表编号。",
+        "announcement": {
+          "badge": "采购",
+          "title": "适合采购订单跟踪表、供应商表格和 CSV 导入",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "生成采购订单编号",
+            "icon": "ClipboardList",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "发票编号生成器",
+            "icon": "ReceiptText",
+            "url": "/invoice-number-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "采购订单编号生成器预览",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "表格背景"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "不用整理公式，也能生成采购订单编号",
+        "description": "采购订单清单需要固定前缀和可排序的编号。设置一次规则后，可以复制公式或导出固定值。",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel 采购订单编号示例"
+        },
+        "items": [
+          {
+            "title": "PO 前缀",
+            "description": "可以使用 PO、PO-2026、BUY、ORDER 或团队自己的采购前缀。",
+            "icon": "Type"
+          },
+          {
+            "title": "从下一个编号开始",
+            "description": "从采购跟踪表里的下一个订单号开始，只生成当前需要的行数。",
+            "icon": "BadgeCheck"
+          },
+          {
+            "title": "适合导入的固定值",
+            "description": "Excel 中使用公式，其他系统需要固定编号时导出 CSV/TXT。",
+            "icon": "FileSpreadsheet"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "如何在 Excel 中创建 PO 编号",
+        "description": "在制作采购订单跟踪表或供应商导入表之前，先用生成器准备编号序列。",
+        "items": [
+          {
+            "title": "选择采购订单前缀",
+            "description": "例如把前缀设为 PO，把分隔符设为连字符。"
+          },
+          {
+            "title": "输入下一个订单号",
+            "description": "从 10001、20260001 或现有跟踪表里的下一个编号开始。"
+          },
+          {
+            "title": "导出编号序列",
+            "description": "留在 Excel 中使用公式；导入固定订单 ID 时使用 CSV/TXT。"
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "block": "features-list",
+        "id": "related",
+        "title": "相关业务编号页面",
+        "description": "选择和你的表格流程最匹配的页面。",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "相关业务编号页面"
+        },
+        "buttons": [
+          {
+            "title": "发票编号生成器",
+            "url": "/invoice-number-generator",
+            "target": "_self",
+            "icon": "ReceiptText",
+            "variant": "outline"
+          },
+          {
+            "title": "序列号生成器",
+            "url": "/serial-number-generator-for-excel",
+            "target": "_self",
+            "icon": "Hash",
+            "variant": "outline"
+          }
+        ],
+        "items": [
+          {
+            "title": "发票编号",
+            "description": "适合 INV-2026-0001 这类单据编号和记账前整理。",
+            "icon": "ReceiptText"
+          },
+          {
+            "title": "SKU 序列",
+            "description": "适合需要 CSV 输出的商品和目录标签。",
+            "icon": "Barcode"
+          },
+          {
+            "title": "序列号",
+            "description": "适合资产、设备和保修跟踪清单。",
+            "icon": "Hash"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "采购订单编号生成器常见问题",
+        "items": [
+          {
+            "question": "可以生成 PO-10001 这类编号吗？",
+            "answer": "可以。前缀填 PO，分隔符填连字符，起始数字设为 10001，不补零或按你的规则设置补零位数。"
+          },
+          {
+            "question": "可以从下一个采购订单号继续生成吗？",
+            "answer": "可以。把起始数字设为采购跟踪表里的下一个可用 PO 编号即可。"
+          },
+          {
+            "question": "这是采购管理软件吗？",
+            "answer": "不是。它是表格编号辅助工具，用来准备编号；审批、记录和采购流程仍应放在你的采购系统中。"
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "现在生成采购订单编号",
+        "description": "打开生成器，输入 PO 编号规则，把输出复制到 Excel 或导入文件。",
+        "buttons": [
+          {
+            "title": "打开生成器",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "ClipboardList"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

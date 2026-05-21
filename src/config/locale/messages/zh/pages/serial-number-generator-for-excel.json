@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "title": "Excel 序列号生成器 - 批量生成 SN-000001 编号",
+    "description": "为 Excel 批量生成序列号、资产编号和设备编号，支持前缀、补零、公式、TXT 输出和 CSV 预览。"
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Excel 序列号生成器",
+        "highlight_text": "序列号",
+        "description": "批量生成 SN-000001、ASSET-1001、设备标签和保修清单编号，不用在表格里反复拖拽公式。",
+        "announcement": {
+          "badge": "库存",
+          "title": "适合资产表、设备清单和产品序列号导入",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "生成序列号",
+            "icon": "Hash",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "SKU 生成器",
+            "icon": "Barcode",
+            "url": "/sku-sequence-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel 序列号生成器预览",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "表格背景"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "生成适合表格流程的序列号清单",
+        "description": "序列号通常需要固定前缀、前导零和连续递增规则。设置一次规则后，就可以复制公式或导出固定值。",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel 序列号示例"
+        },
+        "items": [
+          {
+            "title": "适合资产前缀",
+            "description": "可以使用 SN、SERIAL、ASSET、EQP 或部门代码作为前缀。",
+            "icon": "Type"
+          },
+          {
+            "title": "补零编号",
+            "description": "生成 SN-000001 这类宽度一致、容易排序的编号。",
+            "icon": "BadgeCheck"
+          },
+          {
+            "title": "适合 CSV 导入",
+            "description": "复制 Excel 公式，粘贴固定值，或下载 CSV/TXT 用于导入表。",
+            "icon": "ClipboardCheck"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "如何在 Excel 中生成序列号",
+        "description": "当填充柄太慢或容易错行时，用生成器先把序列准备好。",
+        "items": [
+          {
+            "title": "选择序列号前缀",
+            "description": "例如使用 SN、ASSET 或 SERIAL，并把分隔符设为连字符。"
+          },
+          {
+            "title": "设置数量、起始值和补零",
+            "description": "从下一个可用编号开始，并选择符合表格规则的补零位数。"
+          },
+          {
+            "title": "复制输出结果",
+            "description": "在 Excel 中使用公式；其他系统需要导入时，使用固定值 CSV 或 TXT。"
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "block": "features-list",
+        "id": "related",
+        "title": "相关库存编号页面",
+        "description": "按你要创建的清单选择对应页面。",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "相关库存编号页面"
+        },
+        "buttons": [
+          {
+            "title": "SKU 序列生成器",
+            "url": "/sku-sequence-generator",
+            "target": "_self",
+            "icon": "Barcode",
+            "variant": "outline"
+          },
+          {
+            "title": "批量行标签生成器",
+            "url": "/bulk-row-label-generator",
+            "target": "_self",
+            "icon": "Rows3",
+            "variant": "outline"
+          }
+        ],
+        "items": [
+          {
+            "title": "SKU 序列",
+            "description": "适合商品、目录和电商平台条目标签。",
+            "icon": "Barcode"
+          },
+          {
+            "title": "采购订单编号",
+            "description": "适合 PO-10001 这类采购清单和供应商表格。",
+            "icon": "ClipboardList"
+          },
+          {
+            "title": "批量行标签",
+            "description": "适合工单、批次、行号和通用清单标签。",
+            "icon": "Rows3"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "序列号生成器常见问题",
+        "items": [
+          {
+            "question": "可以生成 SN-000001 这类编号吗？",
+            "answer": "可以。前缀填 SN，分隔符填连字符，起始数字为 1，补零位数设为 6。"
+          },
+          {
+            "question": "可以导出 CSV 序列号吗？",
+            "answer": "可以。生成序列后，可以预览 CSV 输出，再下载或复制到你的表格流程中。"
+          },
+          {
+            "question": "这是序列号数据库吗？",
+            "answer": "不是。它只生成适合表格使用的编号序列，正式产品或资产记录仍应保存在你的库存系统中。"
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "现在生成序列号",
+        "description": "打开生成器，输入你的序列号规则，把输出复制回 Excel。",
+        "buttons": [
+          {
+            "title": "打开生成器",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "Hash"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

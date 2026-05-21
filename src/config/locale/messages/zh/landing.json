@@ -119,6 +119,16 @@
               "title": "发票编号生成器",
               "url": "/invoice-number-generator",
               "target": "_self"
+            },
+            {
+              "title": "序列号生成器",
+              "url": "/serial-number-generator-for-excel",
+              "target": "_self"
+            },
+            {
+              "title": "采购订单编号生成器",
+              "url": "/purchase-order-number-generator",
+              "target": "_self"
             }
           ]
         },

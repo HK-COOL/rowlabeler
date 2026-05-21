@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "title": "Purchase Order Number Generator for Excel - PO-10001 Series",
+    "description": "Generate purchase order number sequences for Excel, procurement sheets, CSV imports, and padded PO lists."
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Purchase order number generator for Excel",
+        "highlight_text": "Purchase order",
+        "description": "Create PO-10001, PO-2026-0001, vendor order lists, and procurement sheet numbers in bulk.",
+        "announcement": {
+          "badge": "Procurement",
+          "title": "For purchase order trackers, vendor sheets, and CSV imports",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "Generate PO Numbers",
+            "icon": "ClipboardList",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "Invoice Number Generator",
+            "icon": "ReceiptText",
+            "url": "/invoice-number-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Purchase order number generator preview",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "spreadsheet background"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "Generate purchase order numbers without spreadsheet cleanup",
+        "description": "PO lists need consistent prefixes and sortable numbers. Set the pattern once, then paste formulas or export fixed values for procurement workflows.",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Purchase order numbers generated for Excel"
+        },
+        "items": [
+          {
+            "title": "PO prefixes",
+            "description": "Use PO, PO-2026, BUY, ORDER, or a team-specific procurement prefix.",
+            "icon": "Type"
+          },
+          {
+            "title": "Next-number control",
+            "description": "Start from the next order number in your tracker and generate only the rows you need.",
+            "icon": "BadgeCheck"
+          },
+          {
+            "title": "Import-friendly values",
+            "description": "Copy formulas for Excel or export fixed CSV/TXT values for another system.",
+            "icon": "FileSpreadsheet"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "How to create PO numbers in Excel",
+        "description": "Use the generator before creating a purchase order tracker or vendor import sheet.",
+        "items": [
+          {
+            "title": "Choose a purchase order prefix",
+            "description": "For example, use PO as the prefix and a hyphen separator."
+          },
+          {
+            "title": "Enter the next order number",
+            "description": "Start from 10001, 20260001, or the next number in your existing tracker."
+          },
+          {
+            "title": "Export the sequence",
+            "description": "Use formulas when staying in Excel and CSV/TXT when importing fixed order IDs."
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "block": "features-list",
+        "id": "related",
+        "title": "Related business numbering pages",
+        "description": "Choose the page that matches your spreadsheet workflow.",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Related business numbering pages"
+        },
+        "buttons": [
+          {
+            "title": "Invoice Number Generator",
+            "url": "/invoice-number-generator",
+            "target": "_self",
+            "icon": "ReceiptText",
+            "variant": "outline"
+          },
+          {
+            "title": "Serial Number Generator",
+            "url": "/serial-number-generator-for-excel",
+            "target": "_self",
+            "icon": "Hash",
+            "variant": "outline"
+          }
+        ],
+        "items": [
+          {
+            "title": "Invoice numbers",
+            "description": "For INV-2026-0001 document sequences and bookkeeping prep.",
+            "icon": "ReceiptText"
+          },
+          {
+            "title": "SKU sequences",
+            "description": "For product and catalog labels that need CSV output.",
+            "icon": "Barcode"
+          },
+          {
+            "title": "Serial numbers",
+            "description": "For asset, equipment, and warranty tracking lists.",
+            "icon": "Hash"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Purchase order number generator FAQ",
+        "items": [
+          {
+            "question": "Can I generate PO-10001 style numbers?",
+            "answer": "Yes. Use PO as the prefix, a hyphen separator, start at 10001, and keep padding off or set it to your preferred width."
+          },
+          {
+            "question": "Can I start from my next purchase order number?",
+            "answer": "Yes. Set the start number to the next available PO number in your tracker."
+          },
+          {
+            "question": "Is this procurement software?",
+            "answer": "No. It is a spreadsheet sequence helper. Use it to prepare IDs, then keep approvals and records in your procurement system."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Generate purchase order numbers now",
+        "description": "Open the generator, enter your PO pattern, and copy the output into Excel or your import file.",
+        "buttons": [
+          {
+            "title": "Open Generator",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "ClipboardList"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

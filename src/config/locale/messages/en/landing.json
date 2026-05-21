@@ -119,6 +119,16 @@
               "title": "Invoice number generator",
               "url": "/invoice-number-generator",
               "target": "_self"
+            },
+            {
+              "title": "Serial number generator",
+              "url": "/serial-number-generator-for-excel",
+              "target": "_self"
+            },
+            {
+              "title": "Purchase order number generator",
+              "url": "/purchase-order-number-generator",
+              "target": "_self"
             }
           ]
         },

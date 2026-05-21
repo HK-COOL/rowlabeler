@@ -60,4 +60,6 @@ export const localeMessagesPaths = [
   'pages/bulk-row-label-generator',
   'pages/sku-sequence-generator',
   'pages/invoice-number-generator',
+  'pages/serial-number-generator-for-excel',
+  'pages/purchase-order-number-generator',
 ];
