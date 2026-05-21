@@ -38,4 +38,8 @@ export const envConfigs: ConfigMap = {
   version: packageJson.version,
   locale_detect_enabled:
     process.env.NEXT_PUBLIC_LOCALE_DETECT_ENABLED ?? 'false',
+  vercel_analytics_enabled:
+    process.env.VERCEL_ANALYTICS_ENABLED ??
+    process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ENABLED ??
+    (process.env.VERCEL === '1' ? 'true' : ''),
 };

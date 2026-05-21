@@ -134,3 +134,33 @@ Week 4:
 ## Next Action
 
 Start Sprint 1 with `toolsite-growth-analytics`, then use the resulting event map to decide whether the first implementation task should be analytics instrumentation or multi-column output planning.
+
+## Sprint 1 Implementation Log
+
+### 2026-05-21 Analytics Instrumentation
+
+Implemented the first measurement layer:
+
+- Vercel Analytics is enabled by default on Vercel deployments.
+- Tool actions now emit safe custom events:
+  - `tool_copy_formula`
+  - `tool_download_csv`
+  - `tool_download_txt`
+  - `tool_apply_preset`
+  - `tool_scroll_to_generator`
+  - `longtail_cta_click`
+- Event payloads use safe buckets only: locale, route, output type, prefix type, row-count range, and output column count.
+- Raw generated values and raw user-entered prefixes are intentionally not sent.
+
+Verification:
+
+```powershell
+pnpm exec tsx scripts/verify-toolsite-analytics.ts
+pnpm exec tsx scripts/verify-excel-sequence-generator.ts
+pnpm exec tsx scripts/verify-site-quality.ts
+pnpm exec tsc --noEmit
+```
+
+Next decision:
+
+- After events accrue, use `toolsite-query-mining` and `toolsite-product-retention-optimizer` to decide between multi-column output improvements and the next commercial long-tail batch.

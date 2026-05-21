@@ -1,7 +1,6 @@
 'use client';
 
-import type { ReactNode } from 'react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
   AlertCircle,
   CheckCircle2,
@@ -14,22 +13,23 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 
-import {
-  calculateExcelSequence,
-  ExcelSequenceInput,
-  ExcelSequenceError,
-  ExcelSequenceErrorCode,
-  EXCEL_SEQUENCE_PREVIEW_LIMIT,
-  generateExcelSequenceCsv,
-  generateExcelSequenceText,
-} from '@/shared/lib/excel-sequence-generator';
-import { cn } from '@/shared/lib/utils';
-import { Section } from '@/shared/types/blocks/landing';
 import { Badge } from '@/shared/components/ui/badge';
 import { Button } from '@/shared/components/ui/button';
 import { Input } from '@/shared/components/ui/input';
 import { Label } from '@/shared/components/ui/label';
 import { Textarea } from '@/shared/components/ui/textarea';
+import {
+  calculateExcelSequence,
+  EXCEL_SEQUENCE_PREVIEW_LIMIT,
+  ExcelSequenceError,
+  ExcelSequenceErrorCode,
+  ExcelSequenceInput,
+  generateExcelSequenceCsv,
+  generateExcelSequenceText,
+} from '@/shared/lib/excel-sequence-generator';
+import { trackToolsiteEvent } from '@/shared/lib/toolsite-analytics';
+import { cn } from '@/shared/lib/utils';
+import { Section } from '@/shared/types/blocks/landing';
 
 type ExampleInput = ExcelSequenceInput & {
   title: string;
@@ -128,7 +128,10 @@ function fieldValue(value: number | string): string {
   return String(value);
 }
 
-function applyTemplate(template: string, values: Record<string, string>): string {
+function applyTemplate(
+  template: string,
+  values: Record<string, string>
+): string {
   return Object.entries(values).reduce(
     (text, [key, value]) => text.replaceAll(`{${key}}`, value),
     template
@@ -146,9 +149,13 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
   const [copiedKey, setCopiedKey] = useState<CopyKey | null>(null);
   const [downloaded, setDownloaded] = useState(false);
   const [downloadedText, setDownloadedText] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const scrollTrackedRef = useRef(false);
   const result = useMemo(() => calculateExcelSequence(input), [input]);
   const previewRowCount = result.ok ? result.previewCount : 0;
-  const outputStatusLabel = result.ok ? labels.outputReady : labels.outputBlocked;
+  const outputStatusLabel = result.ok
+    ? labels.outputReady
+    : labels.outputBlocked;
 
   const getFieldError = (
     codes: ExcelSequenceErrorCode[]
@@ -172,11 +179,28 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
     setDownloadedText(false);
   };
 
+  const eventContext = (outputType?: string) => ({
+    locale: getLocaleFromPathname(),
+    route: getCurrentRoute(),
+    outputType,
+    prefix: fieldValue(input.prefix),
+    rowCount: input.count,
+    columns: input.outputColumns,
+  });
+
   const applyExample = (example: ExampleInput) => {
     setInput(example);
     setCopiedKey(null);
     setDownloaded(false);
     setDownloadedText(false);
+    trackToolsiteEvent('tool_apply_preset', {
+      locale: getLocaleFromPathname(),
+      route: getCurrentRoute(),
+      outputType: example.title,
+      prefix: example.prefix,
+      rowCount: example.count,
+      columns: example.outputColumns,
+    });
   };
 
   const copyValue = async (key: CopyKey, value: string) => {
@@ -195,6 +219,7 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
     }
 
     setCopiedKey(key);
+    trackToolsiteEvent('tool_copy_formula', eventContext(key));
   };
 
   const downloadCsv = () => {
@@ -221,6 +246,7 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
     setDownloaded(true);
+    trackToolsiteEvent('tool_download_csv', eventContext('csv'));
   };
 
   const downloadText = () => {
@@ -247,7 +273,33 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
     setDownloadedText(true);
+    trackToolsiteEvent('tool_download_txt', eventContext('txt'));
   };
+
+  useEffect(() => {
+    const element = sectionRef.current;
+
+    if (!element || typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+
+        if (entry?.isIntersecting && !scrollTrackedRef.current) {
+          scrollTrackedRef.current = true;
+          trackToolsiteEvent('tool_scroll_to_generator', eventContext('view'));
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
 
   const renderCopyButton = (key: CopyKey, value: string) => (
     <Button
@@ -272,6 +324,7 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
 
   return (
     <section
+      ref={sectionRef}
       id={section.id}
       className={cn(
         'bg-muted/55 overflow-x-hidden border-y py-14 md:py-20',
@@ -281,7 +334,9 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
       <div className="container min-w-0 space-y-7">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <div className="mb-3 flex flex-wrap items-center justify-center gap-2">
-            {section.label && <Badge variant="secondary">{section.label}</Badge>}
+            {section.label && (
+              <Badge variant="secondary">{section.label}</Badge>
+            )}
             <Badge variant="outline" className="bg-background/70">
               <ShieldCheck className="size-3" />
               {labels.localNote}
@@ -347,10 +402,7 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
                 label={labels.count}
                 value={fieldValue(input.count)}
               />
-              <MetricTile
-                label={labels.step}
-                value={fieldValue(input.step)}
-              />
+              <MetricTile label={labels.step} value={fieldValue(input.step)} />
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
@@ -359,7 +411,9 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
                 <Input
                   id="excel-prefix"
                   value={fieldValue(input.prefix)}
-                  onChange={(event) => updateInput('prefix', event.target.value)}
+                  onChange={(event) =>
+                    updateInput('prefix', event.target.value)
+                  }
                   aria-invalid={result.errors.some(
                     (error) => error.code === 'prefix-required'
                   )}
@@ -509,6 +563,12 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
               <p className="text-muted-foreground">{labels.guideCta}</p>
               <a
                 href={labels.guideUrl}
+                onClick={() =>
+                  trackToolsiteEvent(
+                    'longtail_cta_click',
+                    eventContext('guide')
+                  )
+                }
                 className="text-primary mt-1 inline-flex font-medium underline-offset-4 hover:underline"
               >
                 {labels.guideLink}
@@ -618,6 +678,19 @@ export function ExcelSequenceGenerator({ section }: { section: Section }) {
       </div>
     </section>
   );
+}
+
+function getCurrentRoute() {
+  if (typeof window === 'undefined') {
+    return '/';
+  }
+
+  return window.location.pathname || '/';
+}
+
+function getLocaleFromPathname() {
+  const route = getCurrentRoute();
+  return route === '/zh' || route.startsWith('/zh/') ? 'zh' : 'en';
 }
 
 function MetricTile({ label, value }: { label: string; value: string }) {
