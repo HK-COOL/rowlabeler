@@ -72,3 +72,4 @@ Plain local standalone builds can fail on Windows symlink permissions. Use the V
 - Launch preflight: `docs/launch-preflight-2026-05-20.md`
 - Current handoff: `docs/handoff-2026-05-20.md`
 - Post-launch retrospective: `docs/postlaunch-retrospective-2026-05-21.md`
+- Phase two growth sprint: `docs/phase-two-growth-sprint-2026-05-21.md`
