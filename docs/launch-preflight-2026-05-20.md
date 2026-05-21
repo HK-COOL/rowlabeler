@@ -14,9 +14,11 @@ The application code builds, public routes render on Vercel, and the production 
 Production deployment:
 
 - Vercel project: `hk123s-projects/rowlabeler`
-- Production deployment: `https://rowlabeler-9tn4kebof-hk123s-projects.vercel.app`
+- Initial production deployment: `https://rowlabeler-9tn4kebof-hk123s-projects.vercel.app`
 - Vercel alias: `https://rowlabeler.vercel.app`
 - Deployment id: `dpl_3nEBKjAGsBHLbye6DFFBEeUXSRgF`
+- Current deploy source: GitHub `HK-COOL/rowlabeler`, branch `main`
+- Latest documented main commit at closeout: `601d18f feat: add SKU and invoice long-tail pages`
 - Custom domains added and aliased in Vercel:
   - `rowlabeler.com`
   - `www.rowlabeler.com`
@@ -31,6 +33,7 @@ Production deployment:
 ## Verified Locally
 
 - Tool logic: `pnpm exec tsx scripts/verify-excel-sequence-generator.ts`
+- Site quality: `pnpm exec tsx scripts/verify-site-quality.ts`
 - TypeScript: `pnpm exec tsc --noEmit`
 - Production build path: `$env:VERCEL='1'; $env:CI='1'; $env:NEXT_TELEMETRY_DISABLED='1'; pnpm exec next build`
 - Local browser checks on `http://localhost:3001`:
@@ -69,3 +72,20 @@ Before enabling auth/admin/payment features, confirm production database strateg
 - Confirmed Vercel certificates and aliases for both custom domains.
 - Confirmed HTTPS `200 OK` for `https://rowlabeler.com/` and `https://www.rowlabeler.com/`.
 - Confirmed `200` responses on `https://rowlabeler.com` for `/`, `/zh`, `/blog/generate-400000-account-labels-without-dragging`, `/robots.txt`, and `/sitemap.xml`.
+
+## Post-Launch Search Submission
+
+Recorded on 2026-05-21:
+
+- `public/sitemap.xml` contains 18 public, canonical, indexable URLs.
+- IndexNow was submitted for all 18 sitemap URLs and returned `200`.
+- Google Search Console domain property for `rowlabeler.com` is accessible.
+- Google sitemap was re-submitted with the full URL `https://rowlabeler.com/sitemap.xml`; Search Console showed 18 URLs.
+- Bing Webmaster has `rowlabeler.com` verified.
+- Bing sitemap was re-submitted from the existing sitemap row; status changed to `Processing`. Discovered URL counts can lag after a successful re-submit.
+
+Provider-operation lessons:
+
+- For Google domain properties, submit the full sitemap URL rather than only `sitemap.xml`.
+- For Bing Webmaster, use the row action to re-submit an existing sitemap when the add-sitemap input is unreliable.
+- After every sitemap change, run IndexNow again and refresh GSC/Bing sitemap status.
