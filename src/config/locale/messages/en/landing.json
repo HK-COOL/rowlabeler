@@ -109,6 +109,16 @@
               "title": "Excel sequence formula generator",
               "url": "/excel-sequence-formula-generator",
               "target": "_self"
+            },
+            {
+              "title": "SKU sequence generator",
+              "url": "/sku-sequence-generator",
+              "target": "_self"
+            },
+            {
+              "title": "Invoice number generator",
+              "url": "/invoice-number-generator",
+              "target": "_self"
             }
           ]
         },

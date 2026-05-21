@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "title": "SKU Sequence Generator for Excel - SKU-0001 Labels",
+    "description": "Generate SKU numbers such as SKU-0001, SKU-0002, and SKU-0003 for Excel, inventory lists, CSV imports, and ecommerce catalogs."
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "SKU sequence generator for Excel",
+        "highlight_text": "SKU sequence",
+        "description": "Create SKU labels with prefixes, separators, padding, and row counts without dragging a spreadsheet fill handle.",
+        "announcement": {
+          "badge": "Inventory",
+          "title": "For SKU-0001 lists, catalog imports, and product cleanup",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "Generate SKU Labels",
+            "icon": "Barcode",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "Bulk Row Labels",
+            "icon": "Tags",
+            "url": "/bulk-row-label-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "SKU sequence generator preview",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "spreadsheet background"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "Make SKU numbers that stay consistent across exports",
+        "description": "SKU lists usually need a predictable pattern. Set the prefix, start number, separator, and padding once, then copy the formula, text, or CSV preview.",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "SKU labels generated for Excel"
+        },
+        "items": [
+          {
+            "title": "Zero-padded SKUs",
+            "description": "Generate SKU-0001, SKU-0002, SKU-0003, or any fixed-width numbering pattern.",
+            "icon": "BadgeCheck"
+          },
+          {
+            "title": "Catalog import prep",
+            "description": "Use TXT or CSV output when another inventory system needs fixed SKU values.",
+            "icon": "FileSpreadsheet"
+          },
+          {
+            "title": "Formula output for large sheets",
+            "description": "Use the Excel formula when the SKU range is too large for manual typing or dragging.",
+            "icon": "Sigma"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "How to create SKU-0001 style labels",
+        "description": "Start with the SKU pattern, then choose the output that fits your spreadsheet workflow.",
+        "items": [
+          {
+            "title": "Enter SKU as the prefix",
+            "description": "Use a hyphen separator when you want labels like SKU-0001."
+          },
+          {
+            "title": "Set padding to 4",
+            "description": "Padding keeps SKU values aligned as numbers grow from 9 to 10, 99 to 100, and beyond."
+          },
+          {
+            "title": "Copy formula or fixed values",
+            "description": "Use formulas for live Excel ranges or TXT and CSV when importing values elsewhere."
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "block": "features-list",
+        "id": "related",
+        "title": "Related spreadsheet generators",
+        "description": "Use the page that matches the label pattern you need.",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Related Excel sequence pages"
+        },
+        "buttons": [
+          {
+            "title": "Account Label Generator",
+            "url": "/excel-account-generator",
+            "target": "_self",
+            "icon": "Tags",
+            "variant": "outline"
+          },
+          {
+            "title": "Invoice Number Generator",
+            "url": "/invoice-number-generator",
+            "target": "_self",
+            "icon": "ReceiptText",
+            "variant": "outline"
+          }
+        ],
+        "items": [
+          {
+            "title": "Account labels",
+            "description": "For Account1, Client1, and user ID sequences.",
+            "icon": "Tags"
+          },
+          {
+            "title": "Invoice numbers",
+            "description": "For INV-2026-0001 style document numbering.",
+            "icon": "ReceiptText"
+          },
+          {
+            "title": "Autofill without dragging",
+            "description": "For users who want to avoid long fill-handle operations.",
+            "icon": "MousePointer2"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "SKU sequence generator FAQ",
+        "items": [
+          {
+            "question": "Can I generate SKU-0001 through SKU-5000?",
+            "answer": "Yes. Use SKU as the prefix, a hyphen separator, start at 1, set rows to 5000, and set zero padding to 4."
+          },
+          {
+            "question": "Can I download the SKU list?",
+            "answer": "Yes. The generator can download TXT output and CSV previews for fixed-value workflows."
+          },
+          {
+            "question": "Does this validate real product SKUs?",
+            "answer": "No. It creates a numbering sequence. You should still check that the generated SKUs match your inventory rules."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Generate SKU labels now",
+        "description": "Open the generator, enter your SKU pattern, and copy the formula, TXT, or CSV output.",
+        "buttons": [
+          {
+            "title": "Open Generator",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "Barcode"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

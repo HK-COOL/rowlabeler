@@ -109,6 +109,16 @@
               "title": "Excel 序列公式生成器",
               "url": "/excel-sequence-formula-generator",
               "target": "_self"
+            },
+            {
+              "title": "SKU 序列生成器",
+              "url": "/sku-sequence-generator",
+              "target": "_self"
+            },
+            {
+              "title": "发票编号生成器",
+              "url": "/invoice-number-generator",
+              "target": "_self"
             }
           ]
         },

@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "title": "SKU 序列生成器 - Excel 批量生成 SKU-0001 标签",
+    "description": "为 Excel、库存表、商品目录和 CSV 导入生成 SKU-0001、SKU-0002、SKU-0003 这类 SKU 编号序列。"
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Excel SKU 序列生成器",
+        "highlight_text": "SKU 序列",
+        "description": "用前缀、分隔符、补零位数和行数生成 SKU 标签，不用在表格里一路拖拽填充柄。",
+        "announcement": {
+          "badge": "库存",
+          "title": "适合 SKU-0001 清单、商品导入和目录整理",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "生成 SKU 标签",
+            "icon": "Barcode",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "批量行标签",
+            "icon": "Tags",
+            "url": "/bulk-row-label-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "SKU 序列生成器预览",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "表格背景"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "生成在导出和导入中保持一致的 SKU 编号",
+        "description": "SKU 清单通常需要固定规则。设置前缀、起始数字、分隔符和补零位数后，可以复制公式、纯文本或 CSV 预览。",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel SKU 标签示例"
+        },
+        "items": [
+          {
+            "title": "补零 SKU",
+            "description": "生成 SKU-0001、SKU-0002、SKU-0003，或任何固定宽度的编号模式。",
+            "icon": "BadgeCheck"
+          },
+          {
+            "title": "商品目录导入",
+            "description": "当库存系统需要固定 SKU 值时，可以使用 TXT 或 CSV 输出。",
+            "icon": "FileSpreadsheet"
+          },
+          {
+            "title": "大表公式输出",
+            "description": "SKU 范围太长时，使用 Excel 公式比手动输入或拖拽更稳。",
+            "icon": "Sigma"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "如何生成 SKU-0001 这类标签",
+        "description": "先确定 SKU 规则，再选择适合表格流程的输出方式。",
+        "items": [
+          {
+            "title": "前缀输入 SKU",
+            "description": "需要 SKU-0001 这类标签时，分隔符可以设置为连字符。"
+          },
+          {
+            "title": "补零位数设为 4",
+            "description": "补零能让 SKU 从 9 到 10、99 到 100 时仍然对齐。"
+          },
+          {
+            "title": "复制公式或固定值",
+            "description": "Excel 大范围使用公式，导入其他系统时使用 TXT 或 CSV。"
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "block": "features-list",
+        "id": "related",
+        "title": "相关表格生成器",
+        "description": "按你要生成的标签模式选择页面。",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "相关 Excel 序列页面"
+        },
+        "buttons": [
+          {
+            "title": "账号标签生成器",
+            "url": "/excel-account-generator",
+            "target": "_self",
+            "icon": "Tags",
+            "variant": "outline"
+          },
+          {
+            "title": "发票编号生成器",
+            "url": "/invoice-number-generator",
+            "target": "_self",
+            "icon": "ReceiptText",
+            "variant": "outline"
+          }
+        ],
+        "items": [
+          {
+            "title": "账号标签",
+            "description": "适合 Account1、Client1 和用户 ID 序列。",
+            "icon": "Tags"
+          },
+          {
+            "title": "发票编号",
+            "description": "适合 INV-2026-0001 这类单据编号。",
+            "icon": "ReceiptText"
+          },
+          {
+            "title": "免拖拽填充",
+            "description": "适合想避开长距离填充柄操作的 Excel 用户。",
+            "icon": "MousePointer2"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "SKU 序列生成器常见问题",
+        "items": [
+          {
+            "question": "可以生成 SKU-0001 到 SKU-5000 吗？",
+            "answer": "可以。前缀填 SKU，分隔符填连字符，起始数字为 1，行数为 5000，补零位数设为 4。"
+          },
+          {
+            "question": "可以下载 SKU 清单吗？",
+            "answer": "可以。生成器支持下载 TXT 输出，也提供 CSV 预览，适合固定值流程。"
+          },
+          {
+            "question": "它会校验真实商品 SKU 吗？",
+            "answer": "不会。它只生成编号序列，你仍然需要确认生成结果符合自己的库存规则。"
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "现在生成 SKU 标签",
+        "description": "打开生成器，输入 SKU 规则，复制公式、TXT 或 CSV 输出。",
+        "buttons": [
+          {
+            "title": "打开生成器",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "Barcode"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

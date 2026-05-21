@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "title": "Excel 发票编号生成器 - 批量生成 INV-2026-0001 序列",
+    "description": "为 Excel 生成 INV-2026-0001 这类发票编号、订单号和单据编号，支持公式、补零、TXT 输出和 CSV 预览。"
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Excel 发票编号生成器",
+        "highlight_text": "发票编号",
+        "description": "生成发票、收据、订单和单据编号序列，保持前缀、分隔符和补零规则一致。",
+        "announcement": {
+          "badge": "单据",
+          "title": "适合发票清单、订单导出和记账前整理",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "生成发票编号",
+            "icon": "ReceiptText",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "公式生成器",
+            "icon": "Sigma",
+            "url": "/excel-sequence-formula-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "发票编号生成器预览",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "表格背景"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "不用重复输入，也能生成一致的单据编号",
+        "description": "发票编号通常需要固定前缀、分隔符和补零。设置一次规则后，可以粘贴进 Excel，或导出固定值。",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Excel 发票编号示例"
+        },
+        "items": [
+          {
+            "title": "灵活前缀",
+            "description": "可以使用 INV-2026、ORDER、BILL、RCPT 或其他短单据前缀。",
+            "icon": "Type"
+          },
+          {
+            "title": "补零编号",
+            "description": "生成 INV-2026-0001 这类更容易排序和阅读的编号。",
+            "icon": "BadgeCheck"
+          },
+          {
+            "title": "适合表格流程",
+            "description": "Excel 大范围用公式，其他系统需要固定值时下载 TXT 或使用 CSV 预览。",
+            "icon": "ClipboardCheck"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "如何在 Excel 中生成发票编号",
+        "description": "用生成器代替手工拼接长清单里的编号。",
+        "items": [
+          {
+            "title": "选择单据前缀",
+            "description": "例如把前缀设为 INV-2026，分隔符设为连字符。"
+          },
+          {
+            "title": "设置起始编号",
+            "description": "从当前业务需要的下一个编号开始，例如 1284。"
+          },
+          {
+            "title": "复制合适的输出",
+            "description": "Excel 表格使用公式，导入其他系统时使用 TXT 或 CSV。"
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "block": "features-list",
+        "id": "related",
+        "title": "相关编号页面",
+        "description": "按你的编号任务选择页面。",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "相关 Excel 编号页面"
+        },
+        "buttons": [
+          {
+            "title": "SKU 序列生成器",
+            "url": "/sku-sequence-generator",
+            "target": "_self",
+            "icon": "Barcode",
+            "variant": "outline"
+          },
+          {
+            "title": "账号标签生成器",
+            "url": "/excel-account-generator",
+            "target": "_self",
+            "icon": "Tags",
+            "variant": "outline"
+          }
+        ],
+        "items": [
+          {
+            "title": "SKU 序列",
+            "description": "适合 SKU-0001 商品和目录标签。",
+            "icon": "Barcode"
+          },
+          {
+            "title": "账号标签",
+            "description": "适合 Account1 和账号 ID 序列。",
+            "icon": "Tags"
+          },
+          {
+            "title": "批量行标签",
+            "description": "适合工单、批次、行号和通用清单标签。",
+            "icon": "Rows3"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "发票编号生成器常见问题",
+        "items": [
+          {
+            "question": "可以生成 INV-2026-0001 这类编号吗？",
+            "answer": "可以。前缀填 INV-2026，分隔符填连字符，起始数字为 1，补零位数设为 4。"
+          },
+          {
+            "question": "可以从已有编号继续生成吗？",
+            "answer": "可以。把起始数字设成你需要的下一个编号，例如 1284。"
+          },
+          {
+            "question": "这是记账或开票系统吗？",
+            "answer": "不是。它只生成表格编号序列，正式发票记录仍应保存在你的财务或开票系统中。"
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "现在生成发票编号",
+        "description": "打开生成器，输入发票编号规则，把输出复制回 Excel。",
+        "buttons": [
+          {
+            "title": "打开生成器",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "ReceiptText"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

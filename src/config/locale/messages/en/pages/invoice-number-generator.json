@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "title": "Invoice Number Generator for Excel - INV-2026-0001 Series",
+    "description": "Generate invoice number sequences for Excel, such as INV-2026-0001, with formulas, padding, TXT output, and CSV previews."
+  },
+  "page": {
+    "show_sections": ["hero", "intent", "workflow", "related", "faq", "cta"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Invoice number generator for Excel",
+        "highlight_text": "Invoice number",
+        "description": "Create invoice, receipt, order, and document number sequences with predictable prefixes and padded numbers.",
+        "announcement": {
+          "badge": "Documents",
+          "title": "For invoice lists, order exports, and bookkeeping prep",
+          "url": "/#generator"
+        },
+        "buttons": [
+          {
+            "title": "Generate Invoice Numbers",
+            "icon": "ReceiptText",
+            "url": "/#generator",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "Formula Generator",
+            "icon": "Sigma",
+            "url": "/excel-sequence-formula-generator",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Invoice number generator preview",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "/imgs/bg/tree.jpg",
+          "alt": "spreadsheet background"
+        }
+      },
+      "intent": {
+        "block": "features-list",
+        "id": "intent",
+        "title": "Generate document numbers without retyping the pattern",
+        "description": "Invoice numbers need consistent prefixes, separators, and padding. Build the pattern once, then paste it into Excel or export fixed values.",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Invoice numbers generated for Excel"
+        },
+        "items": [
+          {
+            "title": "Flexible prefixes",
+            "description": "Use INV-2026, ORDER, BILL, RCPT, or any short document prefix.",
+            "icon": "Type"
+          },
+          {
+            "title": "Padded numbering",
+            "description": "Create INV-2026-0001 style numbers that stay sorted and readable.",
+            "icon": "BadgeCheck"
+          },
+          {
+            "title": "Spreadsheet-safe output",
+            "description": "Copy formulas for Excel ranges or download TXT when another workflow needs fixed values.",
+            "icon": "ClipboardCheck"
+          }
+        ]
+      },
+      "workflow": {
+        "block": "features-step",
+        "id": "workflow",
+        "title": "How to create invoice numbers in Excel",
+        "description": "Use the generator to avoid hand-building long invoice number lists.",
+        "items": [
+          {
+            "title": "Choose a document prefix",
+            "description": "For example, use INV-2026 as the prefix and a hyphen separator."
+          },
+          {
+            "title": "Set the starting number",
+            "description": "Start at the next invoice number in your current sequence."
+          },
+          {
+            "title": "Copy the best output",
+            "description": "Use formulas for Excel sheets and TXT or CSV when importing into another system."
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "related": {
+        "block": "features-list",
+        "id": "related",
+        "title": "Related numbering pages",
+        "description": "Choose the page that matches your numbering job.",
+        "image": {
+          "src": "/preview.svg",
+          "alt": "Related Excel numbering pages"
+        },
+        "buttons": [
+          {
+            "title": "SKU Sequence Generator",
+            "url": "/sku-sequence-generator",
+            "target": "_self",
+            "icon": "Barcode",
+            "variant": "outline"
+          },
+          {
+            "title": "Account Label Generator",
+            "url": "/excel-account-generator",
+            "target": "_self",
+            "icon": "Tags",
+            "variant": "outline"
+          }
+        ],
+        "items": [
+          {
+            "title": "SKU sequences",
+            "description": "For SKU-0001 product and catalog labels.",
+            "icon": "Barcode"
+          },
+          {
+            "title": "Account labels",
+            "description": "For Account1 and account ID sequences.",
+            "icon": "Tags"
+          },
+          {
+            "title": "Bulk row labels",
+            "description": "For tickets, batches, rows, and general list labels.",
+            "icon": "Rows3"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Invoice number generator FAQ",
+        "items": [
+          {
+            "question": "Can I generate INV-2026-0001 style numbers?",
+            "answer": "Yes. Use INV-2026 as the prefix, a hyphen separator, start at 1, and set zero padding to 4."
+          },
+          {
+            "question": "Can I start from an existing invoice number?",
+            "answer": "Yes. Set the start number to the next number you need, such as 1284."
+          },
+          {
+            "question": "Is this a bookkeeping system?",
+            "answer": "No. It only generates spreadsheet number sequences. Keep your official invoice records in your accounting system."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Generate invoice numbers now",
+        "description": "Open the generator, enter your invoice pattern, and copy the output back to Excel.",
+        "buttons": [
+          {
+            "title": "Open Generator",
+            "url": "/#generator",
+            "target": "_self",
+            "icon": "ReceiptText"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

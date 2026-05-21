@@ -58,4 +58,6 @@ export const localeMessagesPaths = [
   'pages/excel-sequence-formula-generator',
   'pages/excel-autofill-without-dragging',
   'pages/bulk-row-label-generator',
+  'pages/sku-sequence-generator',
+  'pages/invoice-number-generator',
 ];

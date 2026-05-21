@@ -1,6 +1,17 @@
 import assert from 'node:assert/strict';
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 process.env.NEXT_PUBLIC_APP_URL = 'https://rowlabeler.com';
+
+const longTailPageSlugs = [
+  'excel-account-generator',
+  'excel-sequence-formula-generator',
+  'excel-autofill-without-dragging',
+  'bulk-row-label-generator',
+  'sku-sequence-generator',
+  'invoice-number-generator',
+];
 
 async function main() {
   const { buildLocalizedAlternates, getPublicPathFromUrl } = await import(
@@ -87,6 +98,43 @@ async function main() {
   assert.equal(appJsonLd['@type'], 'WebApplication');
   assert.equal(appJsonLd.applicationCategory, 'BusinessApplication');
   assert.equal(appJsonLd.offers.price, '0');
+
+  const localeIndex = readFileSync(
+    join(process.cwd(), 'src/config/locale/index.ts'),
+    'utf8'
+  );
+  const sitemap = readFileSync(join(process.cwd(), 'public/sitemap.xml'), 'utf8');
+
+  for (const slug of longTailPageSlugs) {
+    assert.ok(
+      localeIndex.includes(`pages/${slug}`),
+      `${slug} must be registered in localeMessagesPaths`
+    );
+    assert.ok(
+      sitemap.includes(`https://rowlabeler.com/${slug}`),
+      `${slug} English URL must be in sitemap`
+    );
+    assert.ok(
+      sitemap.includes(`https://rowlabeler.com/zh/${slug}`),
+      `${slug} Chinese URL must be in sitemap`
+    );
+
+    for (const locale of ['en', 'zh']) {
+      const pagePath = join(
+        process.cwd(),
+        `src/config/locale/messages/${locale}/pages/${slug}.json`
+      );
+      assert.ok(existsSync(pagePath), `${locale}/${slug}.json must exist`);
+      const pageConfig = JSON.parse(readFileSync(pagePath, 'utf8'));
+      assert.ok(pageConfig.metadata?.title, `${locale}/${slug} needs a title`);
+      assert.ok(
+        pageConfig.metadata?.description,
+        `${locale}/${slug} needs a description`
+      );
+      assert.ok(pageConfig.page?.sections?.hero, `${locale}/${slug} needs hero`);
+      assert.ok(pageConfig.page?.sections?.faq, `${locale}/${slug} needs FAQ`);
+    }
+  }
 
   console.log('verify-site-quality passed');
 }
