@@ -10,6 +10,7 @@ Repo: `https://github.com/HK-COOL/rowlabeler`
 - GitHub plus Vercel auto-deploy now makes future changes much easier to ship.
 - Cloudflare DNS, Vercel domain aliases, HTTPS, robots, sitemap, canonical URLs, hreflang, JSON-LD, IndexNow, Google Search Console, and Bing Webmaster are all part of the launch record.
 - A dedicated verifier now checks the highest-risk SEO wiring: long-tail registration, sitemap entries, metadata, hero, FAQ, canonical URLs, hreflang, JSON-LD, and TXT generation.
+- Brand assets are part of launch quality. Replacing homepage copy is not enough: favicon, `logo.svg`, `logo.png`, touch icons, browser PNG icons, preview images, and app-logo env vars must be checked so the site does not keep ShipAny/template identity in tabs, bookmarks, or search previews.
 
 ## What Went Wrong
 
@@ -18,6 +19,7 @@ Repo: `https://github.com/HK-COOL/rowlabeler`
 - GitHub/Vercel connection came later than ideal, so early deploy work had more manual state to reconcile.
 - Search engine submission required provider-specific details that were not yet in the skills: full sitemap URL for Google domain properties, Bing row re-submit behavior, and IndexNow after sitemap updates.
 - Long-tail growth needed stronger guardrails. New pages must be registered, linked, rendered, indexed, and verified, not just written.
+- The ShipAny favicon and PNG logo survived the first launch because the visible homepage logo was checked, but browser/search icon assets were not treated as a launch gate.
 
 ## Rules For Future Toolsites
 
@@ -31,6 +33,7 @@ Build and deploy:
 
 - Create the GitHub repo and connect Vercel before serious iteration.
 - Verify both preview deploy and custom domain.
+- Replace and verify product-specific favicon, SVG/PNG logo, touch icon, browser PNG icon, and preview image before calling the site launched.
 - Keep real tokens out of source, docs, screenshots, and final summaries.
 - Record provider state in docs using variable names or masked values only.
 
@@ -74,6 +77,7 @@ This closeout updated the ShipAny skills that own these lessons:
 2. Quick start: brand, metadata, public copy, legal pages, sitemap, and visitor-facing homepage.
 3. Tool builder: implement the real interactive tool and a focused verifier.
 4. Page builder and SEO: add only high-intent pages, register them, link them, and update the quality verifier.
-5. Deploy launch: GitHub, Vercel, domain, HTTPS, live HTML, robots, sitemap, canonical, hreflang, JSON-LD.
-6. Post-launch ops: IndexNow, Google Search Console, Bing Webmaster, analytics decision, and recorded provider status.
-7. Neat closeout: update docs and skills before starting the next site.
+5. Brand asset gate: replace favicon, logo PNG/SVG, touch icon, browser PNG icon, and preview image; verify local files, production HTML, and live static asset URLs.
+6. Deploy launch: GitHub, Vercel, domain, HTTPS, live HTML, robots, sitemap, canonical, hreflang, JSON-LD.
+7. Post-launch ops: IndexNow, Google Search Console, Bing Webmaster, analytics decision, and recorded provider status.
+8. Neat closeout: update docs and skills before starting the next site.

@@ -1,6 +1,6 @@
 # Reusable Toolsite SOP V2
 
-Updated: 2026-05-21  
+Updated: 2026-05-22
 Purpose: reusable process for building, launching, indexing, growing, and monetizing small tool sites.
 
 ## Principle
@@ -56,12 +56,18 @@ Required outputs:
 - Navigation and footer
 - Legal pages
 - Theme/assets
+- Site icon set: `favicon.ico`, SVG/PNG logo, touch icon, and browser PNG icon
 - Production URL placeholders
 - Sitemap basics
 
 Copy rule:
 
 - Public pages speak to end visitors. Do not publish internal rationale such as "why this site", "v1 scope", "SOP next step", "launch target", "planned output", or "source pain point".
+
+Brand asset rule:
+
+- Replace all template branding before launch, not only visible homepage logos. Check favicon, `logo.svg`, `logo.png`, Apple touch icon, PNG app icons, admin/auth sidebar logos, OpenGraph preview image, and any environment variables such as `NEXT_PUBLIC_APP_LOGO`, `NEXT_PUBLIC_APP_FAVICON`, and `NEXT_PUBLIC_APP_PREVIEW_IMAGE`.
+- Add a verifier so template favicon/logo assets cannot silently return after later template merges or rebrands.
 
 ### 4. Real Tool
 
@@ -108,6 +114,8 @@ Verify:
 - Canonical URLs
 - Hreflang
 - JSON-LD when present
+- Browser tab icon and touch icon use the product brand, not template defaults
+- Search/social preview image is product-specific or intentionally neutral, not template branding
 - Mobile and real tool first-screen behavior
 
 Host notes:
@@ -251,12 +259,13 @@ Rule:
 - Gate E: IndexNow, Google Search Console, and Bing Webmaster are handled after sitemap changes.
 - Gate F: Analytics exists before large content expansion.
 - Gate G: Monetization starts as an experiment, not infrastructure.
+- Gate H: Browser favicon, logo PNG/SVG, touch icon, and preview image are product-branded and covered by verification.
 
 ## Current Rowlabeler Mapping
 
 Completed:
 
-- Stage 1 intake, shell, real tool, seed SEO, Vercel launch, Cloudflare domain, IndexNow, GSC, Bing, closeout docs.
+- Stage 1 intake, shell, real tool, seed SEO, Vercel launch, Cloudflare domain, IndexNow, GSC, Bing, closeout docs, and template icon replacement.
 
 Next:
 
