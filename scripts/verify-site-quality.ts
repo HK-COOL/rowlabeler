@@ -21,6 +21,15 @@ type HomepageExample = {
   outputColumns: number;
 };
 
+function getPngSize(buffer: Buffer) {
+  assert.equal(buffer.toString('hex', 0, 8), '89504e470d0a1a0a');
+
+  return {
+    width: buffer.readUInt32BE(16),
+    height: buffer.readUInt32BE(20),
+  };
+}
+
 async function main() {
   const { buildLocalizedAlternates, getPublicPathFromUrl } = await import(
     '../src/shared/lib/seo'
@@ -111,6 +120,11 @@ async function main() {
     join(process.cwd(), 'src/config/locale/index.ts'),
     'utf8'
   );
+  const appLayout = readFileSync(
+    join(process.cwd(), 'src/app/layout.tsx'),
+    'utf8'
+  );
+  const logoSvg = readFileSync(join(process.cwd(), 'public/logo.svg'), 'utf8');
   const sitemap = readFileSync(
     join(process.cwd(), 'public/sitemap.xml'),
     'utf8'
@@ -167,6 +181,42 @@ async function main() {
       `${locale} homepage generator needs a multi-column SKU CSV preset`
     );
   }
+
+  assert.ok(
+    logoSvg.includes('Rowlabeler logo'),
+    'public/logo.svg must use Rowlabeler branding'
+  );
+  assert.ok(
+    !logoSvg.toLowerCase().includes('shipany'),
+    'public/logo.svg must not contain template branding'
+  );
+  assert.ok(
+    appLayout.includes('/icon-192.png') &&
+      appLayout.includes('/apple-touch-icon.png'),
+    'layout must expose PNG and Apple touch icons'
+  );
+
+  for (const [fileName, size] of [
+    ['logo.png', 1024],
+    ['apple-touch-icon.png', 180],
+    ['icon-192.png', 192],
+    ['icon-512.png', 512],
+  ] as const) {
+    const iconBuffer = readFileSync(join(process.cwd(), `public/${fileName}`));
+    assert.deepEqual(
+      getPngSize(iconBuffer),
+      { width: size, height: size },
+      `public/${fileName} must be a ${size}x${size} PNG`
+    );
+  }
+
+  const favicon = readFileSync(join(process.cwd(), 'public/favicon.ico'));
+  assert.equal(favicon.readUInt16LE(0), 0, 'favicon.ico reserved field');
+  assert.equal(favicon.readUInt16LE(2), 1, 'favicon.ico type field');
+  assert.ok(
+    favicon.readUInt16LE(4) >= 4,
+    'favicon.ico should include multiple sizes'
+  );
 
   for (const slug of longTailPageSlugs) {
     assert.ok(
